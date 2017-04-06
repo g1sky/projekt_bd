@@ -4,7 +4,7 @@
 <createdTime>2017-03-11 14:10:53 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="78B07B3D-43E4-C88C-1428-CB24880A45D9" value="true"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,7 +21,7 @@
 <generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="78B07B3D-43E4-C88C-1428-CB24880A45D9" value="true"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
 <referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -36,33 +36,38 @@
 <generatorID>82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="78B07B3D-43E4-C88C-1428-CB24880A45D9" value="true"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
 <referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nazwa towaru" id="B255C349-FFE5-F935-6824-5BBA1C0A7F65">
 <createdBy>user</createdBy>
 <createdTime>2017-03-11 14:11:49 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="78B07B3D-43E4-C88C-1428-CB24880A45D9" value="true"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="ilosc" id="642B9478-CE8B-3965-F40A-3D07FA6C5456">
 <createdBy>user</createdBy>
 <createdTime>2017-03-11 14:12:06 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="78B07B3D-43E4-C88C-1428-CB24880A45D9" value="true"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cena jednostkowa" id="DF15D0FA-92AB-089F-1C40-9451F312D9DA">
@@ -70,10 +75,14 @@
 <createdTime>2017-03-11 14:12:09 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="78B07B3D-43E4-C88C-1428-CB24880A45D9" value="true"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,15,3</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

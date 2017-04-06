@@ -3,11 +3,14 @@
 <createdBy>user</createdBy>
 <createdTime>2017-03-11 14:07:40 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
+<engineerTo>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+</engineerTo>
 <sourcePk>6977E8D3-764B-A014-CC3F-986AC04900C1</sourcePk>
 <identifying>true</identifying>
 <nameOnSource>posiada</nameOnSource>
 <nameOnTarget>jest wlasnoscia</nameOnTarget>
-<optionalSource>true</optionalSource>
+<optionalSource>false</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>B7213D2F-A3FF-99D4-16C3-A5908D7383B4</sourceEntity>

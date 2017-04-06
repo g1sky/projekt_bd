@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1DB5707C-F237-0115-FBD4-1453C3D18B22" name="Sektor">
+<createdBy>user</createdBy>
+<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<generatorID>6A4EF439-E10D-4B25-FFE8-973DDC1F37CB</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nazwa" id="953EDC3F-FDE9-0FFD-6CAC-3F8BAABEBB92">
+<createdBy>user</createdBy>
+<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<generatorID>EC3E987C-3A26-1F8B-77EE-8339A564DD0C</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Sektor_ID" id="ADFFBD39-40F6-F772-D6D4-7DC7BB1C1E4E">
+<createdBy>user</createdBy>
+<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2DD78E82-78DC-9CCF-B194-66CEF6047103" name="Sektor_PK">
+<createdBy>user</createdBy>
+<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="ADFFBD39-40F6-F772-D6D4-7DC7BB1C1E4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

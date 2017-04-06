@@ -28,7 +28,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nazwa" id="A8DFE594-846E-0DCC-5C55-AD19CA62D562">
 <createdBy>user</createdBy>
@@ -61,8 +61,9 @@
 <createdBy>user</createdBy>
 <createdTime>2017-03-11 14:02:19 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

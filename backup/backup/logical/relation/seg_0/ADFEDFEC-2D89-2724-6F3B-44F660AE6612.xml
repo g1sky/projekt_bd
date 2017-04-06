@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="sprzedawca" directorySegmentName="seg_0" id="ADFEDFEC-2D89-2724-6F3B-44F660AE6612">
+<createdBy>user</createdBy>
+<createdTime>2017-03-11 14:17:03 UTC</createdTime>
+<generatorID>31C7A337-93CD-C9AB-E9D2-811DF7BF811A</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<engineerTo>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+</engineerTo>
+<sourcePk>6977E8D3-764B-A014-CC3F-986AC04900C1</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>sprzedal</nameOnSource>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B7213D2F-A3FF-99D4-16C3-A5908D7383B4</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>FFC6826D-0A9A-E23F-D57A-CFCDCC174663</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
