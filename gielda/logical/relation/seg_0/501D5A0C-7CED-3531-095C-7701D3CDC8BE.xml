@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="produkt w kategorii" directorySegmentName="seg_0" id="501D5A0C-7CED-3531-095C-7701D3CDC8BE">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:32:10 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<engineerTo>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+</engineerTo>
+<sourcePk>15F35681-9F1C-973B-C09F-0E4C28F99076</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>5288DBEA-2F45-959C-AFEE-0BA03D6426F2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3759AFE9-7E22-913C-453C-44432E41A94A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

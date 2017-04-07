@@ -55,6 +55,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="nazwa_kategorii" id="FCF012CA-9A92-88FB-899A-8F9AFDDF2531">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:33:13 UTC</createdTime>
+<generatorID>501D5A0C-7CED-3531-095C-7701D3CDC8BE</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<engineerTo>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+</engineerTo>
+<referedAttribute>40493B28-DD5F-08E5-2A1B-B65A5C5FB50A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="5C945E25-391E-AAE1-C2CF-52A821238A76" name="towar PK">

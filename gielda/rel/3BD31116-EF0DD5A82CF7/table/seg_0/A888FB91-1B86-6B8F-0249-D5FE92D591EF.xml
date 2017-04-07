@@ -1,0 +1,104 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A888FB91-1B86-6B8F-0249-D5FE92D591EF" name="Towar">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<generatorID>3759AFE9-7E22-913C-453C-44432E41A94A</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Uzytkownik_nick" id="21F4809D-E6C4-FB2C-6E43-EE8E77C3AF5D">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<generatorID>6B2565B4-122B-E505-1DB8-1870D5133654</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="909DCE14-CBFB-7ACC-7D19-531C600B0D85" referredColumn="7086A3EE-0E06-1784-6A9B-C6A5470B3FE7"/>
+</associations>
+</Column>
+<Column name="nazwa" id="0D647363-161A-D678-E112-6B56508A2503">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<generatorID>A8DFE594-846E-0DCC-5C55-AD19CA62D562</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ilosc" id="03CB7E8B-6498-9A07-B5C0-079C7848A8CC">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<generatorID>CD40AB0D-4576-C9B0-E736-AB1D218DB6B9</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Kategoria_nazwa_kategorii" id="1AEEA865-83AC-D0F3-00E5-8D691EAB1EF5">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<generatorID>FCF012CA-9A92-88FB-899A-8F9AFDDF2531</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="66C74F8F-348D-75C2-5830-B4F5B7278B68" referredColumn="6A3BF6BD-DFA4-D0E4-DD35-73BBA2162AAD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F4F37624-F283-FF2D-9A3F-B43A68FF0798" name="Towar_PK">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<generatorID>5C945E25-391E-AAE1-C2CF-52A821238A76</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0D647363-161A-D678-E112-6B56508A2503"/>
+<colUsage columnID="21F4809D-E6C4-FB2C-6E43-EE8E77C3AF5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="10CA5321-16B4-E1D4-6379-B78829FF48B7" name="Towar_Uzytkownik_FK">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<generatorID>46206E85-7C68-F2A9-B9AD-A9DE57E12A9F</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="21F4809D-E6C4-FB2C-6E43-EE8E77C3AF5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39E23FE3-DDD0-B6BA-3993-AD6F735534AE" name="Towar_Kategoria_FK">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<generatorID>501D5A0C-7CED-3531-095C-7701D3CDC8BE</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AEEA865-83AC-D0F3-00E5-8D691EAB1EF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

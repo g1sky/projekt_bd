@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="63CD5A76-8854-A1B9-80C9-4BCB35F6728C" name="Transakcja">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AF6766EC-7E7D-EB55-2862-644FDA2EE8BA" name="Transakcja">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
 <generatorID>FFC6826D-0A9A-E23F-D57A-CFCDCC174663</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Uzytkownik_nick1" id="C65418FA-DCE6-2FA4-785B-BB3547235759">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<Column name="Uzytkownik_nick1" id="71804F75-4EB8-2B9F-395E-FF5E1A769306">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
 <generatorID>633645F7-E7A0-CF8E-204B-A742B619E1DA</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -21,12 +21,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="486579F1-528E-10AE-BC05-09F975244F64" referredColumn="A3712E00-5DFB-0C68-02C5-54AFB0616101"/>
+<colAssociation fkAssociation="69F71CBF-AE81-BDD5-F56F-4B1D91B78195" referredColumn="7086A3EE-0E06-1784-6A9B-C6A5470B3FE7"/>
 </associations>
 </Column>
-<Column name="Uzytkownik_nick" id="321D7A4B-E206-C3F9-035D-E73EA9D9C5EE">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<Column name="Uzytkownik_nick" id="F2830744-29EF-9714-7C9B-FD522A4969DD">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
 <generatorID>CA8B9FD7-A02C-53D3-9A29-E46F3666391F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -37,12 +37,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="9EDE7006-6056-6C3B-9CDB-423E62816E55" referredColumn="A3712E00-5DFB-0C68-02C5-54AFB0616101"/>
+<colAssociation fkAssociation="5AA6CD84-1343-997E-46ED-E21499E6A1F2" referredColumn="7086A3EE-0E06-1784-6A9B-C6A5470B3FE7"/>
 </associations>
 </Column>
-<Column name="nazwa_towaru" id="E6808B5C-71BD-6934-34A8-5D4997216FF1">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<Column name="nazwa_towaru" id="615E7D23-1695-0D6D-D05F-7B241240A649">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
 <generatorID>B255C349-FFE5-F935-6824-5BBA1C0A7F65</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -52,9 +52,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="ilosc" id="0B960955-2EB3-B24F-8E96-77E5AC4110F6">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<Column name="ilosc" id="7297730D-BE30-B540-52C3-40877F9243F9">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
 <generatorID>642B9478-CE8B-3965-F40A-3D07FA6C5456</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -63,9 +63,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="cena_jednostkowa" id="05F2F467-F1AD-2C74-9E4E-E743B5CE3117">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<Column name="cena_jednostkowa" id="5E27BEEB-6656-4015-D680-8372C5396109">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
 <generatorID>DF15D0FA-92AB-089F-1C40-9451F312D9DA</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -76,28 +76,51 @@
 <ownDataTypeParameters>,15,3</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Transakcja_ID" id="ABFA8E84-7FB7-727A-DC4C-0763DBA3DEE6">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="A5A2073F-99C5-F2EE-4136-7DA25A255226" name="Transakcja_Uzytkownik_FK">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<ind_PK_UK id="D536EB00-A85B-5192-E9FD-DEF7AB183E4A" name="Transakcja_PK">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="ABFA8E84-7FB7-727A-DC4C-0763DBA3DEE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75E7DF67-9047-A9ED-8DDE-388447D25971" name="Transakcja_Uzytkownik_FK">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
 <generatorID>82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="321D7A4B-E206-C3F9-035D-E73EA9D9C5EE"/>
+<colUsage columnID="F2830744-29EF-9714-7C9B-FD522A4969DD"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="86695A6F-02AC-53B8-2548-2B59B3D16BFF" name="Transakcja_Uzytkownik_FKv1">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:58:04 UTC</createdTime>
+<ind_PK_UK id="264365CE-8C6E-ED4F-FF5A-99F4D8D43E8B" name="Transakcja_Uzytkownik_FKv1">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:52:24 UTC</createdTime>
 <generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="C65418FA-DCE6-2FA4-785B-BB3547235759"/>
+<colUsage columnID="71804F75-4EB8-2B9F-395E-FF5E1A769306"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
