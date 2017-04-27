@@ -1,20 +1,20 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="wystawiony towar" directorySegmentName="seg_0" id="DBE0EF04-76ED-2F2B-089A-52DA39954867">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_16" directorySegmentName="seg_0" id="B3DAF729-D499-A119-01B6-A8A62313A5F5">
 <createdBy>user</createdBy>
-<createdTime>2017-04-06 13:42:32 UTC</createdTime>
+<createdTime>2017-04-27 20:29:18 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
 <item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
+<sourcePk>5C945E25-391E-AAE1-C2CF-52A821238A76</sourcePk>
+<targetPk>E2350BCE-AD4D-3224-E9A7-580E0EB31AA1</targetPk>
 <identifying>false</identifying>
-<nameOnSource>dotyczy</nameOnSource>
-<nameOnTarget>zawiera</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
-<sourceCardinality>1</sourceCardinality>
+<sourceCardinality>*</sourceCardinality>
 <sourceEntity>3759AFE9-7E22-913C-453C-44432E41A94A</sourceEntity>
 <targetCardinalityString>1</targetCardinalityString>
-<targetEntity>232F15C6-E019-2691-7FA1-FD1E43231FE8</targetEntity>
+<targetEntity>F5A4F648-A1D9-CE5A-1653-A9A5AF75C829</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 </Relation>

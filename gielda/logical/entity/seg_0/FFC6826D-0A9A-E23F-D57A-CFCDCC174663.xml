@@ -15,74 +15,37 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="kupiec" id="633645F7-E7A0-CF8E-204B-A742B619E1DA">
+<Attribute name="kupiec" id="DE9F0464-F7E2-1E5A-E1D3-99E408BCCF9A">
 <createdBy>user</createdBy>
-<createdTime>2017-03-11 14:17:03 UTC</createdTime>
-<generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
-<ownerDesignName>gielda</ownerDesignName>
-<engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
-</engineerTo>
-<referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>40,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="sprzedawca" id="CA8B9FD7-A02C-53D3-9A29-E46F3666391F">
-<createdBy>user</createdBy>
-<createdTime>2017-03-11 14:17:03 UTC</createdTime>
+<createdTime>2017-04-27 20:43:26 UTC</createdTime>
 <generatorID>82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
 <item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nazwa towaru" id="B255C349-FFE5-F935-6824-5BBA1C0A7F65">
+<Attribute name="sprzedawca" id="9D2E8AD2-F19C-FE5D-777D-271B4FD50FF7">
 <createdBy>user</createdBy>
-<createdTime>2017-03-11 14:11:49 UTC</createdTime>
+<createdTime>2017-04-27 20:43:34 UTC</createdTime>
+<generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
 <item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="ilosc" id="642B9478-CE8B-3965-F40A-3D07FA6C5456">
-<createdBy>user</createdBy>
-<createdTime>2017-03-11 14:12:06 UTC</createdTime>
-<ownerDesignName>gielda</ownerDesignName>
-<engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="cena jednostkowa" id="DF15D0FA-92AB-089F-1C40-9451F312D9DA">
-<createdBy>user</createdBy>
-<createdTime>2017-03-11 14:12:09 UTC</createdTime>
-<ownerDesignName>gielda</ownerDesignName>
-<engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT043</logicalDatatype>
-<dataTypePrecision>15</dataTypePrecision>
-<dataTypeScale>3</dataTypeScale>
-<ownDataTypeParameters>,15,3</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

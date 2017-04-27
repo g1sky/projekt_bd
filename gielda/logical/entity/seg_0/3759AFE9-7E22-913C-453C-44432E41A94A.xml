@@ -15,21 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="wlasciciel" id="6B2565B4-122B-E505-1DB8-1870D5133654">
-<createdBy>user</createdBy>
-<createdTime>2017-03-11 14:07:40 UTC</createdTime>
-<generatorID>46206E85-7C68-F2A9-B9AD-A9DE57E12A9F</generatorID>
-<ownerDesignName>gielda</ownerDesignName>
-<engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
-</engineerTo>
-<referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>40,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="nazwa" id="A8DFE594-846E-0DCC-5C55-AD19CA62D562">
 <createdBy>user</createdBy>
 <createdTime>2017-03-11 13:37:56 UTC</createdTime>
@@ -55,36 +40,37 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nazwa_kategorii" id="FCF012CA-9A92-88FB-899A-8F9AFDDF2531">
-<createdBy>student</createdBy>
-<createdTime>2017-04-07 07:33:13 UTC</createdTime>
-<generatorID>501D5A0C-7CED-3531-095C-7701D3CDC8BE</generatorID>
+<Attribute name="nazwa_kategorii" id="F78B8B2F-2B80-8140-9D01-6CA3BE6362DE">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:37:45 UTC</createdTime>
+<generatorID>B3DAF729-D499-A119-01B6-A8A62313A5F5</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
 <item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
-<referedAttribute>40493B28-DD5F-08E5-2A1B-B65A5C5FB50A</referedAttribute>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>79E47A1C-956C-B21E-9937-9C3814BAF54A</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-</attributes>
-<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="5C945E25-391E-AAE1-C2CF-52A821238A76" name="towar PK">
+<Attribute name="nick" id="6EA7EC50-781B-8874-BCCE-FEC71EF1EBFB">
 <createdBy>user</createdBy>
-<createdTime>2017-03-11 14:02:19 UTC</createdTime>
+<createdTime>2017-04-27 20:44:59 UTC</createdTime>
+<generatorID>46206E85-7C68-F2A9-B9AD-A9DE57E12A9F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="false"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
-<pk>true</pk>
-<usedAttributes>
-<attributeRef>A8DFE594-846E-0DCC-5C55-AD19CA62D562</attributeRef>
-<attributeRef>6B2565B4-122B-E505-1DB8-1870D5133654</attributeRef>
-</usedAttributes>
-</identifier>
-</identifiers>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
 </Entity>

@@ -84,15 +84,15 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="6977E8D3-764B-A014-CC3F-986AC04900C1" name="Uzytkownik PK">
+<identifier id="DD510AF3-22BA-9532-62E1-6BCEC075CAE1" name="Key_1">
 <createdBy>user</createdBy>
-<createdTime>2017-03-11 13:43:22 UTC</createdTime>
+<createdTime>2017-04-27 20:36:45 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="false"/>
+<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>13FD38F5-713E-AFFD-E5DF-94BE1F839199</newElementsIDs>
 <usedAttributes>
 <attributeRef>13FD38F5-713E-AFFD-E5DF-94BE1F839199</attributeRef>
 </usedAttributes>

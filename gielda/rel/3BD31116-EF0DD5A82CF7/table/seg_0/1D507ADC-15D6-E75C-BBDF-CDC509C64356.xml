@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1D507ADC-15D6-E75C-BBDF-CDC509C64356" name="Transakcja">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>FFC6826D-0A9A-E23F-D57A-CFCDCC174663</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Uzytkownik_nick" id="A48B990F-D399-E8B0-33F6-9EC9BBB08AA2">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>DE9F0464-F7E2-1E5A-E1D3-99E408BCCF9A</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C80B6F56-F69A-69E7-B765-E2000CD9D1FC" referredColumn="1D3F4EA7-3DBA-E1FC-B9A1-8ECC2030D35D"/>
+</associations>
+</Column>
+<Column name="Uzytkownik_nick1" id="7AEFF526-5FC9-91DB-C6CE-EAEB5AB64369">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>9D2E8AD2-F19C-FE5D-777D-271B4FD50FF7</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3495787C-5682-A57E-76AD-C9477DBC1E92" referredColumn="1D3F4EA7-3DBA-E1FC-B9A1-8ECC2030D35D"/>
+</associations>
+</Column>
+<Column name="Transakcja_ID" id="01258EE7-EB26-5F03-1C24-33F46B911121">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6CAEF8BB-84DC-1978-7804-53251907C71A" name="Transakcja_PK">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="01258EE7-EB26-5F03-1C24-33F46B911121"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B137A2D0-1321-E8B2-1300-1967A12A32DB" name="Transakcja_Uzytkownik_FK">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A48B990F-D399-E8B0-33F6-9EC9BBB08AA2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E2BDB1C6-ADC2-DBFC-A2B3-2BA418B7F945" name="Transakcja_Uzytkownik_FKv1">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7AEFF526-5FC9-91DB-C6CE-EAEB5AB64369"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B98CB9F4-BFB0-329D-796E-E53759B57E1E" containerWithKeyObject="B27E7F7A-033B-D983-0CDF-A170AECD4915" localFKIndex="B2EBC65F-60E6-6B50-9F14-C64A5AED70A4" name="Oferta_Towar_FK">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>DBE0EF04-76ED-2F2B-089A-52DA39954867</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F261EB35-9A1C-9E9C-3593-A8F72E3B7212</referredTableID>
+<keyObject>B1C7FCD5-319C-9066-CD86-2833ECE57C68</keyObject>
+<referredKeyID>B1C7FCD5-319C-9066-CD86-2833ECE57C68</referredKeyID>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="14878215-ED59-F4F8-53CE-131D317AAF38" name="Towar_w_transakcji">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Transakcja_Transakcja_ID" id="E63842D3-19AB-CC49-FA9B-345EAAF2659D">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="33C591F7-3C0B-C67A-170F-941AB397E86A" referredColumn="01258EE7-EB26-5F03-1C24-33F46B911121"/>
+</associations>
+</Column>
+<Column name="Towar_Towar_ID" id="8656FB7F-19B7-98FD-18E8-F0AF4AA271D4">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E034BD52-2346-0E28-47DE-ED5AFDB7DE85" referredColumn="FD465000-3262-6F6E-7EC5-14E7144D5EA2"/>
+</associations>
+</Column>
+<Column name="ilość" id="30AD5EA0-C306-E142-1D66-30F340D8092D">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>54559E3B-1877-9F7F-D06A-BC3848DDCE84</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+</Column>
+<Column name="cena_jednostkowa" id="63927399-7002-766A-9C03-9B91A92CBB0C">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>0225FAB2-C998-66C0-34D7-43983A5A872F</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,15,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="245F974E-868F-D0FE-A3E4-9D90AB3FF80D" name="Towar_w_transakcji_PK">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E63842D3-19AB-CC49-FA9B-345EAAF2659D"/>
+<colUsage columnID="8656FB7F-19B7-98FD-18E8-F0AF4AA271D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2CCB32AB-0B72-CAF4-B35B-CA8598F8166D" name="FK_ASS_55">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>9CE5E0F9-0C90-2E1E-D9A0-D02D1BCEB664</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E63842D3-19AB-CC49-FA9B-345EAAF2659D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CEE924BB-65FA-E320-2F5D-B735298EFEFF" name="FK_ASS_56">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:49:07 UTC</createdTime>
+<generatorID>9CE5E0F9-0C90-2E1E-D9A0-D02D1BCEB664</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8656FB7F-19B7-98FD-18E8-F0AF4AA271D4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

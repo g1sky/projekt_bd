@@ -15,21 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="nazwa" id="51AFF909-BF34-2D16-561C-A8F4226E7421">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:42:32 UTC</createdTime>
-<generatorID>DBE0EF04-76ED-2F2B-089A-52DA39954867</generatorID>
-<ownerDesignName>gielda</ownerDesignName>
-<engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
-</engineerTo>
-<referedAttribute>A8DFE594-846E-0DCC-5C55-AD19CA62D562</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="cena_jednostkowa" id="75126849-20CD-81F8-8908-239D8D1DE003">
 <createdBy>sgorski</createdBy>
 <createdTime>2017-03-24 08:24:12 UTC</createdTime>
@@ -44,21 +29,6 @@
 <dataTypePrecision>15</dataTypePrecision>
 <dataTypeScale>3</dataTypeScale>
 <ownDataTypeParameters>,15,3</ownDataTypeParameters>
-</Attribute>
-<Attribute name="wlasciciel" id="62A663B9-0F8A-F60B-A2C2-86ADABEB7E1B">
-<createdBy>user</createdBy>
-<createdTime>2017-04-06 13:42:32 UTC</createdTime>
-<generatorID>DBE0EF04-76ED-2F2B-089A-52DA39954867</generatorID>
-<ownerDesignName>gielda</ownerDesignName>
-<engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
-</engineerTo>
-<referedAttribute>6B2565B4-122B-E505-1DB8-1870D5133654</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="ilość" id="7E096AC2-730D-727F-9032-E75B76B39CD7">
 <createdBy>student</createdBy>
