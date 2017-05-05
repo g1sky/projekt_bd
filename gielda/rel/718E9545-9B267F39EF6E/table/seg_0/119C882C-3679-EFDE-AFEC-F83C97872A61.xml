@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="119C882C-3679-EFDE-AFEC-F83C97872A61" name="Transakcja">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>FFC6826D-0A9A-E23F-D57A-CFCDCC174663</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Uzytkownik_nick" id="298F5505-F645-2F34-B611-12FE44FA3E0E">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>DE9F0464-F7E2-1E5A-E1D3-99E408BCCF9A</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F99698D1-18B1-4584-3C59-A8DC1C4C7B0A" referredColumn="AA63819D-1E4D-90B2-9E45-93A4EB8D440F"/>
+</associations>
+</Column>
+<Column name="Uzytkownik_nick1" id="B8F65322-DB43-8C7F-1D95-39BCFB1BAF4A">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>9D2E8AD2-F19C-FE5D-777D-271B4FD50FF7</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="986B2E31-8224-253D-CDD2-D96B9B492DBD" referredColumn="AA63819D-1E4D-90B2-9E45-93A4EB8D440F"/>
+</associations>
+</Column>
+<Column name="Transakcja_ID" id="4E98CDD4-EBF6-24CE-9098-4204B11CF55A">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B8E34D2A-F2FB-40C7-D9FC-13192EF22B96" name="Transakcja_PK">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="4E98CDD4-EBF6-24CE-9098-4204B11CF55A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3613DBAD-056B-5384-83F8-61E4C1C1428C" name="Transakcja_Uzytkownik_FK">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="298F5505-F645-2F34-B611-12FE44FA3E0E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A32340D-7C41-1C1B-F622-4985FB38E85D" name="Transakcja_Uzytkownik_FKv1">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B8F65322-DB43-8C7F-1D95-39BCFB1BAF4A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

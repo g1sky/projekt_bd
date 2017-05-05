@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BF23EED3-0683-F93A-63BD-1E783D2D760F" name="Kategoria">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 06:48:51 UTC</createdTime>
+<generatorID>F5A4F648-A1D9-CE5A-1653-A9A5AF75C829</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nazwa_kategorii" id="875AEE66-5066-A589-9227-EB3B3FB05C98">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 06:48:51 UTC</createdTime>
+<generatorID>79E47A1C-956C-B21E-9937-9C3814BAF54A</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FBC797DC-FAA8-6D84-8EDB-3523DFA7FE61" name="Kategoria_nazwa_kategorii_UN">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 06:48:51 UTC</createdTime>
+<generatorID>E2350BCE-AD4D-3224-E9A7-580E0EB31AA1</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="875AEE66-5066-A589-9227-EB3B3FB05C98"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="345513B7-C256-6CBC-0CFF-DA5DBE94C641" name="Oferta">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>232F15C6-E019-2691-7FA1-FD1E43231FE8</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cena_jednostkowa" id="A18333A3-7093-ADC3-28FD-5D857A52889D">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>75126849-20CD-81F8-8908-239D8D1DE003</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,15,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ilość" id="0AD6ADBE-1884-7D4E-255F-E442C8826411">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>7E096AC2-730D-727F-9032-E75B76B39CD7</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Towar_Towar_ID" id="D1C7FB80-11AA-0820-E5B5-E48FD1FFFC0C">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7D46B919-E664-E280-237A-601C6EF56C10" referredColumn="4002254A-0B2D-403A-E23D-B5A6E09681FA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6BB67B0F-CC2C-A070-20B6-6A9AEFB8EDBE" name="Oferta__IDX">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>DBE0EF04-76ED-2F2B-089A-52DA39954867</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="D1C7FB80-11AA-0820-E5B5-E48FD1FFFC0C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="69E3E1FB-7524-0D8D-4C66-AB4F9430390A" name="Oferta_Towar_FK">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<generatorID>DBE0EF04-76ED-2F2B-089A-52DA39954867</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1C7FB80-11AA-0820-E5B5-E48FD1FFFC0C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

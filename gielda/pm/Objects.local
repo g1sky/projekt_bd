@@ -1,2 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<oracle.dbtools.crest.model.design.process.ProcessModel/>
+<oracle.dbtools.crest.model.design.process.ProcessModel>
+   <object objectType="InfoStore" objectID="AFF18EB3-8450-C402-BF40-B503BD551F3B" name="Oferty" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.process.InfoStore" propertyParentId="C5834C23-E644-3B4D-133B-660FB8667585" propertySourceId="" propertyTargetId=""/>
+   <object objectType="InfoStore" objectID="356AD538-7A14-6BE3-3B20-93BEA7F9B040" name="Towary" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.process.InfoStore" propertyParentId="C5834C23-E644-3B4D-133B-660FB8667585" propertySourceId="" propertyTargetId=""/>
+   <object objectType="InfoStore" objectID="1396682A-45C3-4D56-B7DE-0D76DAE44D1E" name="Uzytkownicy" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.process.InfoStore" propertyParentId="C5834C23-E644-3B4D-133B-660FB8667585" propertySourceId="" propertyTargetId=""/>
+</oracle.dbtools.crest.model.design.process.ProcessModel>
