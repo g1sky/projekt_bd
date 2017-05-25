@@ -1,4 +1,4 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.process.DataFlowDesign>
-   <object objectType="main_view" objectID="0CCCD8D8-763B-6C9F-B28F-41D6551D04BF" name="Zarzadzanie towarami" visible="true"/>
+   <object objectType="main_view" objectID="061922BC-5F49-AA7E-6D58-7A850C638705" name="Zarzadzanie kontem" visible="true"/>
 </oracle.dbtools.crest.model.design.process.DataFlowDesign>

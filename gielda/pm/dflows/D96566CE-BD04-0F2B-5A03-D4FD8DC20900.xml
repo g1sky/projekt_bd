@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DataFlowDesign class="oracle.dbtools.crest.model.design.process.DataFlowDesign" name="Zarzadzanie kontem" id="D96566CE-BD04-0F2B-5A03-D4FD8DC20900" mainViewID="061922BC-5F49-AA7E-6D58-7A850C638705" topLevel="true">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-25 23:15:29 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+<processOrderString>96084DEF-83CB-2765-B515-DA76DB702637,D1590577-A7F7-E34B-5C0D-DA660B7F6C75</processOrderString>
+</DataFlowDesign>

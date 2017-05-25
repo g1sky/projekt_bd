@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="dane ofertyv2" directorySegmentName="seg_0" id="8F0C3C5C-A02A-0BC3-BA29-CC7669509EB8">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-12 07:20:50 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>E144134A-83ED-AE02-F7D5-DA555435A1F8</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<sourceProcessObject>3D394ED1-CEBD-E3CB-839D-D619EFD725CD</sourceProcessObject>
+<targetProcessObject>E144134A-83ED-AE02-F7D5-DA555435A1F8</targetProcessObject>
+<infoStructures>
+<infoStructureRef>CB1A3ABE-CD70-9952-0285-747DCD94F99A</infoStructureRef>
+</infoStructures>
+</Flow>

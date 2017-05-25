@@ -4,7 +4,7 @@
 <createdTime>2017-03-11 14:10:53 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,7 +21,7 @@
 <generatorID>82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
@@ -37,7 +37,7 @@
 <generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
@@ -45,6 +45,18 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="stan" id="BE088F6E-8259-C648-F472-9247A4886850">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-12 07:31:55 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<engineerTo>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT018</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

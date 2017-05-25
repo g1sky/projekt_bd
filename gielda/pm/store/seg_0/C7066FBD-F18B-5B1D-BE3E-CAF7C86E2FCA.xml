@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<InfoStore class="oracle.dbtools.crest.model.design.process.InfoStore" name="Towary" directorySegmentName="seg_0" id="356AD538-7A14-6BE3-3B20-93BEA7F9B040">
+<InfoStore class="oracle.dbtools.crest.model.design.process.InfoStore" name="Towary" directorySegmentName="seg_0" id="C7066FBD-F18B-5B1D-BE3E-CAF7C86E2FCA">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:10:30 UTC</createdTime>
+<createdTime>2017-05-12 06:48:03 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <rdbmsSite>Oracle Database 11g</rdbmsSite>
 <selfDescribing>false</selfDescribing>
