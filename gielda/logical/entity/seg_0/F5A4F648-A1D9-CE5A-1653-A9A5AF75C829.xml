@@ -4,7 +4,7 @@
 <createdTime>2017-04-27 20:28:59 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,15 +14,15 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<createSurrogateKey>true</createSurrogateKey>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="nazwa_kategorii" id="79E47A1C-956C-B21E-9937-9C3814BAF54A">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:29:04 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -31,12 +31,13 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="E2350BCE-AD4D-3224-E9A7-580E0EB31AA1" name="nazwa_u">
+<identifier id="E2350BCE-AD4D-3224-E9A7-580E0EB31AA1" name="nazwa_unique">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:37:10 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="false"/>
 </engineerTo>
 <newElementsIDs>79E47A1C-956C-B21E-9937-9C3814BAF54A</newElementsIDs>
 <usedAttributes>

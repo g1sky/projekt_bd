@@ -1,15 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="71E799C2-239E-E4C6-9EEF-FC5173109EE2" name="Towar_w_transakcji">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F4D57E98-F797-02B6-7E81-CCD7F007EB1C" name="Towar_w_transakcji">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="Transakcja_Transakcja_ID" id="48BFBFDB-5838-FF9F-9AF6-14C77CC724DE">
+<Column name="Transakcja_Transakcja_ID" id="D2220A1C-6339-984E-4ACC-C551B0E5950F">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -18,12 +18,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="C3729CEE-4212-79B8-346A-B84C3F576103" referredColumn="4E98CDD4-EBF6-24CE-9098-4204B11CF55A"/>
+<colAssociation fkAssociation="16BD1EC4-6923-446E-AB91-80ED89608ADB" referredColumn="9C294FB9-7522-1D1B-762A-1045C7569B27"/>
 </associations>
 </Column>
-<Column name="Towar_Towar_ID" id="0E12E6F9-5B5D-A0A5-16FF-72E81958C507">
+<Column name="Towar_Towar_ID" id="70D77593-93C1-F793-287B-B205A064102F">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -32,12 +32,12 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="5A73B0FC-0C97-AD96-CA51-5FB1BD27FAE5" referredColumn="4002254A-0B2D-403A-E23D-B5A6E09681FA"/>
+<colAssociation fkAssociation="9E4A490C-962F-9AF3-D384-17D24DEA6E4E" referredColumn="5D809000-D9DD-CEF4-BE63-CB9B8E3B785A"/>
 </associations>
 </Column>
-<Column name="ilość" id="E216B3BC-2F47-8BDA-CE54-483874756BAB">
+<Column name="ilość" id="96FD9ACD-5063-5526-24D1-18E9783F6C69">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>54559E3B-1877-9F7F-D06A-BC3848DDCE84</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -48,9 +48,9 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <isRelationshipColumn>true</isRelationshipColumn>
 </Column>
-<Column name="cena_jednostkowa" id="89B7FDF4-496C-F477-EEB2-C76F943437C0">
+<Column name="cena_jednostkowa" id="9B6A0AA4-ACE1-0040-7FD7-DD37C07B41B7">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>0225FAB2-C998-66C0-34D7-43983A5A872F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
@@ -65,38 +65,38 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="31DC6657-D191-1E43-DFCC-0043C6C274B8" name="Towar_w_transakcji_PK">
+<ind_PK_UK id="D70A8589-730A-461E-5DFE-600DA9DE03F3" name="Towar_w_transakcji_PK">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="48BFBFDB-5838-FF9F-9AF6-14C77CC724DE"/>
-<colUsage columnID="0E12E6F9-5B5D-A0A5-16FF-72E81958C507"/>
+<colUsage columnID="D2220A1C-6339-984E-4ACC-C551B0E5950F"/>
+<colUsage columnID="70D77593-93C1-F793-287B-B205A064102F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="024DFCD9-9FFD-6F61-C932-792091639568" name="FK_ASS_2">
+<ind_PK_UK id="C071836D-5BC6-04C3-B2D0-EAD7B40A2781" name="FK_ASS_9">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>9CE5E0F9-0C90-2E1E-D9A0-D02D1BCEB664</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="48BFBFDB-5838-FF9F-9AF6-14C77CC724DE"/>
+<colUsage columnID="D2220A1C-6339-984E-4ACC-C551B0E5950F"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="AA089153-BC0E-0C77-F6EE-CA6D033D242C" name="FK_ASS_3">
+<ind_PK_UK id="AD2EE175-E4AD-D0D8-9B46-5E68862803F0" name="FK_ASS_10">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>9CE5E0F9-0C90-2E1E-D9A0-D02D1BCEB664</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="0E12E6F9-5B5D-A0A5-16FF-72E81958C507"/>
+<colUsage columnID="70D77593-93C1-F793-287B-B205A064102F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

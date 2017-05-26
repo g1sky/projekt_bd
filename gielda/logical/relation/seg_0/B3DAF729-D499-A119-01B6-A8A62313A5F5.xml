@@ -1,14 +1,14 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_16" directorySegmentName="seg_0" id="B3DAF729-D499-A119-01B6-A8A62313A5F5">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Kategoria towaru" directorySegmentName="seg_0" id="B3DAF729-D499-A119-01B6-A8A62313A5F5">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:29:18 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
-<sourcePk>5C945E25-391E-AAE1-C2CF-52A821238A76</sourcePk>
-<targetPk>E2350BCE-AD4D-3224-E9A7-580E0EB31AA1</targetPk>
+<useSurrogateKey>true</useSurrogateKey>
 <identifying>false</identifying>
+<nameOnSource>jest w kategorii</nameOnSource>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>*</sourceCardinality>

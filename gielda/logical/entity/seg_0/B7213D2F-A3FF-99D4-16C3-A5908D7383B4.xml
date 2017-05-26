@@ -69,7 +69,7 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="DD510AF3-22BA-9532-62E1-6BCEC075CAE1" name="Key_1">
+<identifier id="DD510AF3-22BA-9532-62E1-6BCEC075CAE1" name="nickname_key">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:36:45 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>

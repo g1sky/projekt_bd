@@ -4,7 +4,7 @@
 <createdTime>2017-03-11 13:37:36 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2017-03-11 13:37:56 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,28 +33,14 @@
 <createdTime>2017-03-11 13:38:12 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="nazwa_kategorii" id="F78B8B2F-2B80-8140-9D01-6CA3BE6362DE">
-<createdBy>user</createdBy>
-<createdTime>2017-04-27 20:37:45 UTC</createdTime>
-<generatorID>B3DAF729-D499-A119-01B6-A8A62313A5F5</generatorID>
-<ownerDesignName>gielda</ownerDesignName>
-<engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>79E47A1C-956C-B21E-9937-9C3814BAF54A</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="nick" id="6EA7EC50-781B-8874-BCCE-FEC71EF1EBFB">
 <createdBy>user</createdBy>
@@ -62,7 +48,7 @@
 <generatorID>46206E85-7C68-F2A9-B9AD-A9DE57E12A9F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>

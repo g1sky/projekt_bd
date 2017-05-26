@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E16E68C4-20AD-870A-8F47-27D9F353E095" name="Uzytkownik">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6290FE8A-BA85-4D09-7CB9-E54961F393F8" name="Uzytkownik">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>B7213D2F-A3FF-99D4-16C3-A5908D7383B4</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="imie" id="31795031-10C5-639B-EFBD-DE6F58889ADB">
+<Column name="imie" id="3BE51CF4-3D41-EF10-4E15-3B53F0BB5A2C">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>E6669F5C-0A37-FC8D-E639-3F6870F54866</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -20,9 +20,9 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nazwisko" id="63B2BEA1-409A-88E9-2CA9-CAC1E4CFF5DB">
+<Column name="nazwisko" id="92841397-D134-F1C7-E3D3-2627B78B8267">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>B76250C7-469A-A626-88F8-760B734EA4D5</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -32,9 +32,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nick" id="AA63819D-1E4D-90B2-9E45-93A4EB8D440F">
+<Column name="nick" id="C2F8495B-5DB4-FF9F-9E4E-4051AB4DFC0E">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>13FD38F5-713E-AFFD-E5DF-94BE1F839199</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -44,9 +44,9 @@
 <ownDataTypeParameters>40,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="haslo" id="A8B2AB86-CF0E-EAA7-56B5-DF1D04646B2A">
+<Column name="haslo" id="664FF92F-D395-F223-2BE6-2A6A85398005">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>AA6070C2-BB01-8A73-5173-E3B8642BE739</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -56,32 +56,18 @@
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="stan_konta" id="F6E9D69D-ADB7-D5E5-E0F2-1BCB3028A9E7">
-<createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
-<generatorID>CF4B33CC-06ED-0BAE-28D8-6CFF6D2BDCC4</generatorID>
-<ownerDesignName>gielda</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT043</logicalDatatype>
-<dataTypePrecision>15</dataTypePrecision>
-<dataTypeScale>3</dataTypeScale>
-<defaultValue>1000</defaultValue>
-<ownDataTypeParameters>,15,3</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="5CBFC266-575F-7BD4-33DC-D1E3985BE203" name="Uzytkownik_PK">
+<ind_PK_UK id="6262E454-3273-2A8C-74D6-41964E4801E7" name="Uzytkownik_PK">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-05-05 07:30:02 UTC</createdTime>
+<createdTime>2017-05-26 07:46:25 UTC</createdTime>
 <generatorID>DD510AF3-22BA-9532-62E1-6BCEC075CAE1</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="AA63819D-1E4D-90B2-9E45-93A4EB8D440F"/>
+<colUsage columnID="C2F8495B-5DB4-FF9F-9E4E-4051AB4DFC0E"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
