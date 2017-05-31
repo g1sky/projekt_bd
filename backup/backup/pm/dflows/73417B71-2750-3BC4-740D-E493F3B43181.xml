@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DataFlowDesign class="oracle.dbtools.crest.model.design.process.DataFlowDesign" name="Zarzadzanie towarami" id="73417B71-2750-3BC4-740D-E493F3B43181" mainViewID="0CCCD8D8-763B-6C9F-B28F-41D6551D04BF" topLevel="true">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-05 06:55:44 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+<processOrderString>D9DDB21D-2F7A-E6CF-54D5-7FBDE633C80F</processOrderString>
+</DataFlowDesign>

@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Process class="oracle.dbtools.crest.model.design.process.Process" name="Dodawanie towaru" directorySegmentName="seg_0" id="D9DDB21D-2F7A-E6CF-54D5-7FBDE633C80F">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-12 06:46:33 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<primary>false</primary>
+<batchMinimumTransactions>1000</batchMinimumTransactions>
+<batchTimeUnit>Second</batchTimeUnit>
+<frequencyTimeUnit>Day</frequencyTimeUnit>
+<frequencyTimes>0</frequencyTimes>
+<interactiveLongestResponseTime>5</interactiveLongestResponseTime>
+<interactiveResponseTimeUnit>Second</interactiveResponseTimeUnit>
+<mode>Unknown</mode>
+<priority>Low</priority>
+<peakPeriodsString>000000000000000000000000</peakPeriodsString>
+<targetMappings itemClass="oracle.dbtools.crest.model.design.process.TargetElement">
+<targetMapping id="CD40AB0D-4576-C9B0-E736-AB1D218DB6B9" name="ilosc">
+<target>CD40AB0D-4576-C9B0-E736-AB1D218DB6B9</target>
+<transformationType>As It Is</transformationType>
+</targetMapping>
+<targetMapping id="A8DFE594-846E-0DCC-5C55-AD19CA62D562" name="nazwa">
+<target>A8DFE594-846E-0DCC-5C55-AD19CA62D562</target>
+<transformationType>As It Is</transformationType>
+</targetMapping>
+<targetMapping id="F78B8B2F-2B80-8140-9D01-6CA3BE6362DE" name="nazwa_kategorii">
+<transformationType>As It Is</transformationType>
+</targetMapping>
+<targetMapping id="6EA7EC50-781B-8874-BCCE-FEC71EF1EBFB" name="nickname">
+<target>6EA7EC50-781B-8874-BCCE-FEC71EF1EBFB</target>
+<transformationType>As It Is</transformationType>
+</targetMapping>
+</targetMappings>
+</Process>

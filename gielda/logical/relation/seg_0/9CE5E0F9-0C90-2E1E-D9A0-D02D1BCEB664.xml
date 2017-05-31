@@ -4,7 +4,7 @@
 <createdTime>2017-04-27 20:06:55 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <identifying>false</identifying>
 <nameOnSource>w ramach</nameOnSource>
@@ -18,27 +18,27 @@
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<attribute name="ilość" id="54559E3B-1877-9F7F-D06A-BC3848DDCE84">
+<attribute name="ilosc" id="54559E3B-1877-9F7F-D06A-BC3848DDCE84">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:40:16 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
 </attribute>
 <attribute name="cena_jednostkowa" id="0225FAB2-C998-66C0-34D7-43983A5A872F">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:40:23 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT043</logicalDatatype>

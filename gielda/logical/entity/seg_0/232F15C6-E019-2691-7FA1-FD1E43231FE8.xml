@@ -22,7 +22,6 @@
 <engineerTo>
 <item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT043</logicalDatatype>
@@ -30,14 +29,13 @@
 <dataTypeScale>3</dataTypeScale>
 <ownDataTypeParameters>,15,3</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ilość" id="7E096AC2-730D-727F-9032-E75B76B39CD7">
+<Attribute name="ilosc" id="7E096AC2-730D-727F-9032-E75B76B39CD7">
 <createdBy>student</createdBy>
 <createdTime>2017-04-07 07:14:12 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <engineerTo>
 <item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>

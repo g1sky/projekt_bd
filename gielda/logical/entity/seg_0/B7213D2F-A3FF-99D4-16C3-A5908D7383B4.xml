@@ -41,7 +41,7 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nick" id="13FD38F5-713E-AFFD-E5DF-94BE1F839199">
+<Attribute name="nickname" id="13FD38F5-713E-AFFD-E5DF-94BE1F839199">
 <createdBy>user</createdBy>
 <createdTime>2017-03-11 13:36:49 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>

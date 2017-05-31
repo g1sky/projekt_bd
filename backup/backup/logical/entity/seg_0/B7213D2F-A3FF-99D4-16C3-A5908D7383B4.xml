@@ -4,7 +4,7 @@
 <createdTime>2017-03-11 13:36:21 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2017-03-11 13:36:31 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +33,7 @@
 <createdTime>2017-03-11 13:36:40 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -41,12 +41,12 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nick" id="13FD38F5-713E-AFFD-E5DF-94BE1F839199">
+<Attribute name="nickname" id="13FD38F5-713E-AFFD-E5DF-94BE1F839199">
 <createdBy>user</createdBy>
 <createdTime>2017-03-11 13:36:49 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -59,7 +59,7 @@
 <createdTime>2017-03-11 13:37:05 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -67,31 +67,18 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="stan konta" id="CF4B33CC-06ED-0BAE-28D8-6CFF6D2BDCC4">
-<createdBy>user</createdBy>
-<createdTime>2017-03-11 14:05:21 UTC</createdTime>
-<ownerDesignName>backup</ownerDesignName>
-<engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT043</logicalDatatype>
-<dataTypePrecision>15</dataTypePrecision>
-<dataTypeScale>3</dataTypeScale>
-<defaultValue>1000</defaultValue>
-<ownDataTypeParameters>,15,3</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="6977E8D3-764B-A014-CC3F-986AC04900C1" name="Uzytkownik PK">
+<identifier id="DD510AF3-22BA-9532-62E1-6BCEC075CAE1" name="nickname_key">
 <createdBy>user</createdBy>
-<createdTime>2017-03-11 13:43:22 UTC</createdTime>
+<createdTime>2017-04-27 20:36:45 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="false"/>
 </engineerTo>
 <pk>true</pk>
+<newElementsIDs>13FD38F5-713E-AFFD-E5DF-94BE1F839199</newElementsIDs>
 <usedAttributes>
 <attributeRef>13FD38F5-713E-AFFD-E5DF-94BE1F839199</attributeRef>
 </usedAttributes>

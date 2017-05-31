@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8B5BA112-5AC3-3739-CCA9-DD76E3AD0A53" name="Transakcja">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>FFC6826D-0A9A-E23F-D57A-CFCDCC174663</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="kupiec" id="1E5C047F-8EE8-36F4-06F4-BF74252003F9">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>DE9F0464-F7E2-1E5A-E1D3-99E408BCCF9A</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5C6A8B0A-FE91-862D-90ED-8DA0B6DB2C1D" referredColumn="49E63F10-D185-16CC-2898-F193DB677367"/>
+</associations>
+</Column>
+<Column name="sprzedawca" id="9C27A98E-1ADC-F3CB-C170-85CEBB07CC62">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>9D2E8AD2-F19C-FE5D-777D-271B4FD50FF7</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="91098A44-A92B-ECE2-E635-7A31B538DD24" referredColumn="49E63F10-D185-16CC-2898-F193DB677367"/>
+</associations>
+</Column>
+<Column name="stan" id="4092B614-25D6-71CF-ABB2-EAAF18C415C7">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>BE088F6E-8259-C648-F472-9247A4886850</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id" id="DF4ABBD1-AFDB-5D3E-8A63-7D6F6CD89F69">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C94294ED-9BBE-DF2D-B629-BE2E6F732C95" name="Transakcja_PK">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="DF4ABBD1-AFDB-5D3E-8A63-7D6F6CD89F69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="32F0D0E3-23F8-BC46-7659-6E01DC7AC406" name="Transakcja_Uzytkownik_FK">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1E5C047F-8EE8-36F4-06F4-BF74252003F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9B5B011C-1024-DD54-6BED-FDBFCEEC79AC" name="Transakcja_Uzytkownik_FKv1">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C27A98E-1ADC-F3CB-C170-85CEBB07CC62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

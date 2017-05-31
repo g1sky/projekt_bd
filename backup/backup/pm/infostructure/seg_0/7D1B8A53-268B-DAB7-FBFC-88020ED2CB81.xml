@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<InfoStructure class="oracle.dbtools.crest.model.design.process.InfoStructure" name="dane logowania" directorySegmentName="seg_0" id="7D1B8A53-268B-DAB7-FBFC-88020ED2CB81">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-25 23:23:19 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<growthRatePercent>0</growthRatePercent>
+<growthRateUnit>Day</growthRateUnit>
+<volume>0</volume>
+<used_attributes>
+<attributeRef>AA6070C2-BB01-8A73-5173-E3B8642BE739</attributeRef>
+<attributeRef>13FD38F5-713E-AFFD-E5DF-94BE1F839199</attributeRef>
+</used_attributes>
+</InfoStructure>

@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ExternalAgent class="oracle.dbtools.crest.model.design.process.ExternalAgent" name="Uzytkownik" directorySegmentName="seg_0" id="4E18B0DE-552B-EF95-D1AA-D02D557E6A44">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-25 23:16:15 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<fieldSeparator>,</fieldSeparator>
+<fileType>CSV</fileType>
+<selfDescribing>false</selfDescribing>
+<skipRecords>0</skipRecords>
+<transfertype>Full Refresh</transfertype>
+<type>3</type>
+</ExternalAgent>

@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E563DE77-23C0-AEB8-248E-0F28F1FF02C1" name="Oferta">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>232F15C6-E019-2691-7FA1-FD1E43231FE8</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="cena_jednostkowa" id="CA27C180-41B7-7D8C-C6B8-F269AB11AAC5">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>75126849-20CD-81F8-8908-239D8D1DE003</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,15,3</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ilosc" id="CBF60702-14C5-E63D-A671-69375D697456">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>7E096AC2-730D-727F-9032-E75B76B39CD7</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_towaru" id="7F02A816-B1FA-D476-005D-33E76055B904">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D110DC8-08A2-8B2A-19B0-96FDCBA94577" referredColumn="1709BAB3-097E-1907-1EBE-9663D22C1EB7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BD2738BB-0EB0-5B00-8717-02F6F70F3BD9" name="Oferta__IDX">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>DBE0EF04-76ED-2F2B-089A-52DA39954867</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="7F02A816-B1FA-D476-005D-33E76055B904"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5D31BCBC-181C-2376-F07F-4A754371D3E4" name="Oferta_Towar_FK">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>DBE0EF04-76ED-2F2B-089A-52DA39954867</generatorID>
+<ownerDesignName>backup</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F02A816-B1FA-D476-005D-33E76055B904"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

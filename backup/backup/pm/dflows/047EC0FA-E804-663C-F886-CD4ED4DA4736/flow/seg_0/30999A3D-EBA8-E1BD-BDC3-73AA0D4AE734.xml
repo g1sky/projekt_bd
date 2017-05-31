@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="towary w koszyku" directorySegmentName="seg_0" id="30999A3D-EBA8-E1BD-BDC3-73AA0D4AE734">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-12 07:39:09 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<destination>BE25B941-CC9F-5AD1-103E-D0428362676E</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<sourceProcessObject>95E62F03-6A40-D4C5-AE22-78F5CF54B1B2</sourceProcessObject>
+<targetProcessObject>BE25B941-CC9F-5AD1-103E-D0428362676E</targetProcessObject>
+<infoStructures>
+<infoStructureRef>0BBCEDD9-536C-8905-8306-A6316B5529DE</infoStructureRef>
+</infoStructures>
+</Flow>

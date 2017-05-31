@@ -1,17 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="kupiecv1" directorySegmentName="seg_0" id="82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="kupiec" directorySegmentName="seg_0" id="82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F">
 <createdBy>user</createdBy>
 <createdTime>2017-03-11 14:17:03 UTC</createdTime>
 <generatorID>15F68435-965B-E80E-3DB7-5E3981B9F3C5</generatorID>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
-<sourcePk>6977E8D3-764B-A014-CC3F-986AC04900C1</sourcePk>
+<sourcePk>DD510AF3-22BA-9532-62E1-6BCEC075CAE1</sourcePk>
 <identifying>false</identifying>
-<nameOnSource>kupil</nameOnSource>
-<optionalSource>true</optionalSource>
-<optionalTarget>false</optionalTarget>
+<nameOnSource>kupił</nameOnSource>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>B7213D2F-A3FF-99D4-16C3-A5908D7383B4</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>

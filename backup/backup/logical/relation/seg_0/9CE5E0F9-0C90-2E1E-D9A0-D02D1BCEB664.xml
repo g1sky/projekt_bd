@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Towar w transakcji" directorySegmentName="seg_0" id="9CE5E0F9-0C90-2E1E-D9A0-D02D1BCEB664">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:06:55 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<engineerTo>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnSource>w ramach</nameOnSource>
+<nameOnTarget>został sprzedany</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>FFC6826D-0A9A-E23F-D57A-CFCDCC174663</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3759AFE9-7E22-913C-453C-44432E41A94A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="ilosc" id="54559E3B-1877-9F7F-D06A-BC3848DDCE84">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:40:16 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<engineerTo>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
+</attribute>
+<attribute name="cena_jednostkowa" id="0225FAB2-C998-66C0-34D7-43983A5A872F">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:40:23 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<engineerTo>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,15,3</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

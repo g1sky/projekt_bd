@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="wystawiony towar" directorySegmentName="seg_0" id="DBE0EF04-76ED-2F2B-089A-52DA39954867">
+<createdBy>user</createdBy>
+<createdTime>2017-04-06 13:42:32 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<engineerTo>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<nameOnSource>dotyczy</nameOnSource>
+<nameOnTarget>zawiera</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>3759AFE9-7E22-913C-453C-44432E41A94A</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>232F15C6-E019-2691-7FA1-FD1E43231FE8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

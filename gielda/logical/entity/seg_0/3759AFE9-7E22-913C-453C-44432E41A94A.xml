@@ -42,7 +42,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,12,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nick" id="6EA7EC50-781B-8874-BCCE-FEC71EF1EBFB">
+<Attribute name="nickname" id="6EA7EC50-781B-8874-BCCE-FEC71EF1EBFB">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:44:59 UTC</createdTime>
 <generatorID>46206E85-7C68-F2A9-B9AD-A9DE57E12A9F</generatorID>
@@ -56,7 +56,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

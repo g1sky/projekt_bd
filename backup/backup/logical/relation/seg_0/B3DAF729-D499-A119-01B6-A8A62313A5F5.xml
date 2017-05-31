@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Kategoria towaru" directorySegmentName="seg_0" id="B3DAF729-D499-A119-01B6-A8A62313A5F5">
+<createdBy>user</createdBy>
+<createdTime>2017-04-27 20:29:18 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<engineerTo>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
+</engineerTo>
+<useSurrogateKey>true</useSurrogateKey>
+<identifying>false</identifying>
+<nameOnSource>jest w kategorii</nameOnSource>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>3759AFE9-7E22-913C-453C-44432E41A94A</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>F5A4F648-A1D9-CE5A-1653-A9A5AF75C829</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

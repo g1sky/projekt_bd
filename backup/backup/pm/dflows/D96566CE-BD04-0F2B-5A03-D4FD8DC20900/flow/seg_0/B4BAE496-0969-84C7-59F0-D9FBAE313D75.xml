@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="weryfikacja danych logowania" directorySegmentName="seg_0" id="B4BAE496-0969-84C7-59F0-D9FBAE313D75">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-05-25 23:24:23 UTC</createdTime>
+<ownerDesignName>backup</ownerDesignName>
+<destination>D1590577-A7F7-E34B-5C0D-DA660B7F6C75</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>true</opRead>
+<opUpdate>false</opUpdate>
+<sourceProcessObject>639ADC52-1034-4C37-7796-F0E8FBF6C99D</sourceProcessObject>
+<targetProcessObject>D1590577-A7F7-E34B-5C0D-DA660B7F6C75</targetProcessObject>
+<infoStructures>
+<infoStructureRef>7D1B8A53-268B-DAB7-FBFC-88020ED2CB81</infoStructureRef>
+</infoStructures>
+</Flow>

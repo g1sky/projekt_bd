@@ -16,7 +16,7 @@
 <normalForm>Third</normalForm>
 <createSurrogateKey>true</createSurrogateKey>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="nazwa_kategorii" id="79E47A1C-956C-B21E-9937-9C3814BAF54A">
+<Attribute name="nazwa" id="79E47A1C-956C-B21E-9937-9C3814BAF54A">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:29:04 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>

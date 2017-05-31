@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="kupiec" id="DE9F0464-F7E2-1E5A-E1D3-99E408BCCF9A">
+<Attribute name="nickname" id="DE9F0464-F7E2-1E5A-E1D3-99E408BCCF9A">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:43:26 UTC</createdTime>
 <generatorID>82AEDF30-F0C6-F3B0-93BD-62CA5A3F991F</generatorID>
@@ -31,7 +31,7 @@
 <dataTypeSize>40</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="sprzedawca" id="9D2E8AD2-F19C-FE5D-777D-271B4FD50FF7">
+<Attribute name="nickname1" id="9D2E8AD2-F19C-FE5D-777D-271B4FD50FF7">
 <createdBy>user</createdBy>
 <createdTime>2017-04-27 20:43:34 UTC</createdTime>
 <generatorID>ADFEDFEC-2D89-2724-6F3B-44F660AE6612</generatorID>
@@ -45,7 +45,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="stan" id="BE088F6E-8259-C648-F472-9247A4886850">
 <createdBy>sgorski</createdBy>
@@ -56,8 +56,9 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT018</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>

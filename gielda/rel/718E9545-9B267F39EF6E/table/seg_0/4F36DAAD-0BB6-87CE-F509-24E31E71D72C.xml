@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4F36DAAD-0BB6-87CE-F509-24E31E71D72C" name="Uzytkownik">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>B7213D2F-A3FF-99D4-16C3-A5908D7383B4</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="imie" id="1F49D9EA-7FB4-D169-0C82-914989542E19">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>E6669F5C-0A37-FC8D-E639-3F6870F54866</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nazwisko" id="6FAD1E5A-2BD4-5FF8-D6CD-CD2FF89FD62B">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>B76250C7-469A-A626-88F8-760B734EA4D5</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nickname" id="49E63F10-D185-16CC-2898-F193DB677367">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>13FD38F5-713E-AFFD-E5DF-94BE1F839199</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="haslo" id="D4C32F2C-4B22-EE89-2913-4A14F9C7D614">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>AA6070C2-BB01-8A73-5173-E3B8642BE739</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6F0B0095-5046-7164-ECF8-AA8B3ECA3832" name="uzytkownik_pk">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:04:06 UTC</createdTime>
+<generatorID>DD510AF3-22BA-9532-62E1-6BCEC075CAE1</generatorID>
+<ownerDesignName>gielda</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49E63F10-D185-16CC-2898-F193DB677367"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A3E2AC83-F063-6594-C782-0F938FDB0C3D" name="uz_nick_idx">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:36:22 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="49E63F10-D185-16CC-2898-F193DB677367"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6114BEC7-3AAB-7AAD-C916-56C5B236AD97" name="uz_in_idx">
+<createdBy>user</createdBy>
+<createdTime>2017-05-31 16:36:22 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1F49D9EA-7FB4-D169-0C82-914989542E19"/>
+<colUsage columnID="6FAD1E5A-2BD4-5FF8-D6CD-CD2FF89FD62B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

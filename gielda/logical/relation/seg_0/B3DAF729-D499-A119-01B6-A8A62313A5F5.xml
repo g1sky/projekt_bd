@@ -8,7 +8,8 @@
 </engineerTo>
 <useSurrogateKey>true</useSurrogateKey>
 <identifying>false</identifying>
-<nameOnSource>jest w kategorii</nameOnSource>
+<nameOnSource>należy do</nameOnSource>
+<nameOnTarget>jest zbiorem</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>*</sourceCardinality>

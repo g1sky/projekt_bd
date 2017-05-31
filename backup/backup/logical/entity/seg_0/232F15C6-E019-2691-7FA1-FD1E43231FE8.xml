@@ -4,7 +4,7 @@
 <createdTime>2017-03-24 08:23:11 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,28 +20,30 @@
 <createdTime>2017-03-24 08:24:12 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT043</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>3</dataTypeScale>
+<ownDataTypeParameters>,15,3</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nick" id="B4F35520-6EBC-9050-039A-6FD802FFE6E5">
-<createdBy>sgorski</createdBy>
-<createdTime>2017-03-24 08:27:48 UTC</createdTime>
-<generatorID>B461B9BD-EF1B-47E4-1A3A-51C9EB4272A2</generatorID>
+<Attribute name="ilosc" id="7E096AC2-730D-727F-9032-E75B76B39CD7">
+<createdBy>student</createdBy>
+<createdTime>2017-04-07 07:14:12 UTC</createdTime>
 <ownerDesignName>backup</ownerDesignName>
 <engineerTo>
-<item key="3BD31116-9726-45D8-4389-EF0DD5A82CF7" value="true"/>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
 </engineerTo>
-<referedAttribute>13FD38F5-713E-AFFD-E5DF-94BE1F839199</referedAttribute>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>12</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,12,2</ownDataTypeParameters>
 </Attribute>
 </attributes>
 </Entity>
