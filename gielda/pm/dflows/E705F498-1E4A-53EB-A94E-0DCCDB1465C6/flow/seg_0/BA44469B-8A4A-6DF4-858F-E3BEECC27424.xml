@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Zmiana stanu transakcji" directorySegmentName="seg_0" id="BA44469B-8A4A-6DF4-858F-E3BEECC27424">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 20:36:06 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>624B7CB3-821E-E6F1-7615-290A13846FE7</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<parentObject>B107270B-3774-8708-D399-1552F0318185</parentObject>
+<sourceProcessObject>5B33B7CD-E62A-4BCA-8CE9-E30663AD4E33</sourceProcessObject>
+<targetProcessObject>624B7CB3-821E-E6F1-7615-290A13846FE7</targetProcessObject>
+<infoStructures>
+<infoStructureRef>D2AEC741-FF85-BA50-92A1-8559F5CFB741</infoStructureRef>
+</infoStructures>
+</Flow>

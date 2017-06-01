@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<InfoStructure class="oracle.dbtools.crest.model.design.process.InfoStructure" name="DaneLogowaniaUzytkownika" directorySegmentName="seg_0" id="BB234B3E-59C7-3922-1FDE-076A80C18C75">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 18:38:37 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<growthRatePercent>0</growthRatePercent>
+<growthRateUnit>Day</growthRateUnit>
+<volume>0</volume>
+<used_attributes>
+<attributeRef>AA6070C2-BB01-8A73-5173-E3B8642BE739</attributeRef>
+<attributeRef>13FD38F5-713E-AFFD-E5DF-94BE1F839199</attributeRef>
+</used_attributes>
+</InfoStructure>

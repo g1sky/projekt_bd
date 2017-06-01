@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DataFlowDesign class="oracle.dbtools.crest.model.design.process.DataFlowDesign" name="Zakup Diagram" id="E705F498-1E4A-53EB-A94E-0DCCDB1465C6" mainViewID="4EB59534-D60B-2FC7-1E3F-16A46066264A" topLevel="false" parentDFD_ID="8E29F97B-85B9-EDC1-5638-EE425CFC875D">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 20:11:59 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+<process>93636EFE-453E-2455-C964-DC52C96BA71E</process>
+<processOrderString>24DC111C-4DCF-CA38-4A79-8FF29D9989C8,428ACDAB-FF6B-8DCF-F97C-D7FBA410BD56,5B33B7CD-E62A-4BCA-8CE9-E30663AD4E33</processOrderString>
+</DataFlowDesign>

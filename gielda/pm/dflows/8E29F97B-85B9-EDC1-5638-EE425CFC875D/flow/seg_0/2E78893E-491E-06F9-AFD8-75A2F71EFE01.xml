@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dane towaru" directorySegmentName="seg_0" id="2E78893E-491E-06F9-AFD8-75A2F71EFE01">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 18:57:16 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>93636EFE-453E-2455-C964-DC52C96BA71E</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<sourceProcessObject>99E5A972-9718-E3C5-FC1F-8773C6F47DC5</sourceProcessObject>
+<targetProcessObject>93636EFE-453E-2455-C964-DC52C96BA71E</targetProcessObject>
+<infoStructures>
+<infoStructureRef>7960DF3F-7C70-63AE-1F33-593986044428</infoStructureRef>
+</infoStructures>
+</Flow>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<InfoStructure class="oracle.dbtools.crest.model.design.process.InfoStructure" name="Oferta" directorySegmentName="seg_0" id="EB07657D-56C3-D280-FDF3-B7DD0ED8D61A">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 18:54:33 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<growthRatePercent>0</growthRatePercent>
+<growthRateUnit>Day</growthRateUnit>
+<volume>0</volume>
+<used_attributes>
+<attributeRef>75126849-20CD-81F8-8908-239D8D1DE003</attributeRef>
+<attributeRef>7E096AC2-730D-727F-9032-E75B76B39CD7</attributeRef>
+</used_attributes>
+</InfoStructure>

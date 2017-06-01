@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Process class="oracle.dbtools.crest.model.design.process.Process" name="Rejestracja" directorySegmentName="seg_0" id="C058A5F1-1669-B2AA-CC2D-9EA1CAF2B5AF">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 14:44:31 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<primary>false</primary>
+<batchMinimumTransactions>1000</batchMinimumTransactions>
+<batchTimeUnit>Second</batchTimeUnit>
+<frequencyTimeUnit>Day</frequencyTimeUnit>
+<frequencyTimes>0</frequencyTimes>
+<interactiveLongestResponseTime>5</interactiveLongestResponseTime>
+<interactiveResponseTimeUnit>Second</interactiveResponseTimeUnit>
+<mode>Unknown</mode>
+<priority>Low</priority>
+<peakPeriodsString>000000000000000000000000</peakPeriodsString>
+<targetMappings itemClass="oracle.dbtools.crest.model.design.process.TargetElement">
+<targetMapping id="AA6070C2-BB01-8A73-5173-E3B8642BE739" name="haslo">
+<target>AA6070C2-BB01-8A73-5173-E3B8642BE739</target>
+<transformationType>As It Is</transformationType>
+</targetMapping>
+<targetMapping id="E6669F5C-0A37-FC8D-E639-3F6870F54866" name="imie">
+<target>E6669F5C-0A37-FC8D-E639-3F6870F54866</target>
+<transformationType>As It Is</transformationType>
+</targetMapping>
+<targetMapping id="B76250C7-469A-A626-88F8-760B734EA4D5" name="nazwisko">
+<target>B76250C7-469A-A626-88F8-760B734EA4D5</target>
+<transformationType>As It Is</transformationType>
+</targetMapping>
+<targetMapping id="13FD38F5-713E-AFFD-E5DF-94BE1F839199" name="nickname">
+<target>13FD38F5-713E-AFFD-E5DF-94BE1F839199</target>
+<transformationType>As It Is</transformationType>
+</targetMapping>
+</targetMappings>
+</Process>

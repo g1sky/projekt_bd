@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.DataFlowDesign>
+   <object objectType="main_view" objectID="4EB59534-D60B-2FC7-1E3F-16A46066264A" name="Zakup Diagram" visible="true"/>
+</oracle.dbtools.crest.model.design.process.DataFlowDesign>

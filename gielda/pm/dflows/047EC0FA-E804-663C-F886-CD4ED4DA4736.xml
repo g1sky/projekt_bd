@@ -1,8 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<DataFlowDesign class="oracle.dbtools.crest.model.design.process.DataFlowDesign" name="Obsługa ofert" id="047EC0FA-E804-663C-F886-CD4ED4DA4736" mainViewID="0B5E65DD-6053-CA9A-4823-1DA4334B46CA" topLevel="true">
-<createdBy>sgorski</createdBy>
-<createdTime>2017-05-12 07:04:27 UTC</createdTime>
-<ownerDesignName>gielda</ownerDesignName>
-<shouldBeOpen>true</shouldBeOpen>
-<processOrderString>3D394ED1-CEBD-E3CB-839D-D619EFD725CD,AD82EEE9-CA46-F02D-754E-64929E87C101,5B9E278F-2DA9-5BF0-0755-25D92532E09B,95E62F03-6A40-D4C5-AE22-78F5CF54B1B2</processOrderString>
-</DataFlowDesign>

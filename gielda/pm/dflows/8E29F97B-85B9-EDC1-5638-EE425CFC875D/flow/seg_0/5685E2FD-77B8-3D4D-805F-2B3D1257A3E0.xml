@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dane logowania uzytkownika" directorySegmentName="seg_0" id="5685E2FD-77B8-3D4D-805F-2B3D1257A3E0">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 18:36:35 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>D7202F39-D809-E71F-73F9-74695E123353</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<sourceProcessObject>99E5A972-9718-E3C5-FC1F-8773C6F47DC5</sourceProcessObject>
+<targetProcessObject>D7202F39-D809-E71F-73F9-74695E123353</targetProcessObject>
+<infoStructures>
+<infoStructureRef>BB234B3E-59C7-3922-1FDE-076A80C18C75</infoStructureRef>
+</infoStructures>
+</Flow>

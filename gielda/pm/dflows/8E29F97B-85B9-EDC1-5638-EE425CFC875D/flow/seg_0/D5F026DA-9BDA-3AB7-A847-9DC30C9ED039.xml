@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dodaj towar" directorySegmentName="seg_0" id="D5F026DA-9BDA-3AB7-A847-9DC30C9ED039">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 18:52:02 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>624B7CB3-821E-E6F1-7615-290A13846FE7</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<sourceProcessObject>D2440D7A-E428-DB47-E055-7B5401E7AF5D</sourceProcessObject>
+<targetProcessObject>624B7CB3-821E-E6F1-7615-290A13846FE7</targetProcessObject>
+<infoStructures>
+<infoStructureRef>2BD2DF76-17FE-D21A-06A3-BB69B37FE787</infoStructureRef>
+</infoStructures>
+</Flow>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dopasowane oferty" directorySegmentName="seg_0" id="49D18AD7-D9ED-1495-6665-D1BDF55EE9F1">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 20:19:26 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>24DC111C-4DCF-CA38-4A79-8FF29D9989C8</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>true</opRead>
+<opUpdate>false</opUpdate>
+<parentObject>79C3554D-261C-D132-0B79-BF8CC0554E7D</parentObject>
+<sourceProcessObject>624B7CB3-821E-E6F1-7615-290A13846FE7</sourceProcessObject>
+<targetProcessObject>24DC111C-4DCF-CA38-4A79-8FF29D9989C8</targetProcessObject>
+<infoStructures>
+<infoStructureRef>EB07657D-56C3-D280-FDF3-B7DD0ED8D61A</infoStructureRef>
+<infoStructureRef>7960DF3F-7C70-63AE-1F33-593986044428</infoStructureRef>
+</infoStructures>
+</Flow>

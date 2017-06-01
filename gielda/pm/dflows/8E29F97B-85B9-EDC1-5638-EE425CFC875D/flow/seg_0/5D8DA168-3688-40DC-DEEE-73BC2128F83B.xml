@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dane nowego towaru" directorySegmentName="seg_0" id="5D8DA168-3688-40DC-DEEE-73BC2128F83B">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 18:43:22 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>D2440D7A-E428-DB47-E055-7B5401E7AF5D</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<sourceProcessObject>99E5A972-9718-E3C5-FC1F-8773C6F47DC5</sourceProcessObject>
+<targetProcessObject>D2440D7A-E428-DB47-E055-7B5401E7AF5D</targetProcessObject>
+<infoStructures>
+<infoStructureRef>2BD2DF76-17FE-D21A-06A3-BB69B37FE787</infoStructureRef>
+</infoStructures>
+</Flow>

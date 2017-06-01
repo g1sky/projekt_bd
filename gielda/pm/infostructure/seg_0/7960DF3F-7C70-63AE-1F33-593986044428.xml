@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<InfoStructure class="oracle.dbtools.crest.model.design.process.InfoStructure" name="NazwaTowaru" directorySegmentName="seg_0" id="7960DF3F-7C70-63AE-1F33-593986044428">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-01 19:39:36 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<growthRatePercent>0</growthRatePercent>
+<growthRateUnit>Day</growthRateUnit>
+<volume>0</volume>
+<used_attributes>
+<attributeRef>A8DFE594-846E-0DCC-5C55-AD19CA62D562</attributeRef>
+</used_attributes>
+</InfoStructure>

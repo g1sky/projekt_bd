@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<oracle.dbtools.crest.model.design.process.DataFlowDesign>
-   <object objectType="ExtAgent" objectID="445B352D-89D8-D8D9-24FC-AB8E08534EE9" name="Uzytkownik" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.process.ExternalAgent" propertyParentId="73417B71-2750-3BC4-740D-E493F3B43181" propertySourceId="" propertyTargetId=""/>
-   <object objectType="Process" objectID="D9DDB21D-2F7A-E6CF-54D5-7FBDE633C80F" name="Dodawanie towaru" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.process.Process" propertyParentId="73417B71-2750-3BC4-740D-E493F3B43181" propertySourceId="" propertyTargetId=""/>
-   <object objectType="Flow" objectID="90699253-2302-33FD-5A96-C145388AD2FF" name="dane towaru" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.process.Flow" propertyParentId="73417B71-2750-3BC4-740D-E493F3B43181" propertySourceId="445B352D-89D8-D8D9-24FC-AB8E08534EE9" propertyTargetId="D9DDB21D-2F7A-E6CF-54D5-7FBDE633C80F"/>
-   <object objectType="Flow" objectID="9567612B-03A5-703C-D91F-F76C9B1A37F3" name="dane towaruv2" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.process.Flow" propertyParentId="73417B71-2750-3BC4-740D-E493F3B43181" propertySourceId="D9DDB21D-2F7A-E6CF-54D5-7FBDE633C80F" propertyTargetId="C7066FBD-F18B-5B1D-BE3E-CAF7C86E2FCA"/>
-</oracle.dbtools.crest.model.design.process.DataFlowDesign>
