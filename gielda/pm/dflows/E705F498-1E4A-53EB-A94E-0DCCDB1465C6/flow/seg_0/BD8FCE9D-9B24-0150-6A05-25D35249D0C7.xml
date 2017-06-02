@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dane transakcji" directorySegmentName="seg_0" id="BD8FCE9D-9B24-0150-6A05-25D35249D0C7">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-02 06:45:20 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>7F482019-3F54-605D-9D56-A363AAD425CD</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<sourceProcessObject>5B33B7CD-E62A-4BCA-8CE9-E30663AD4E33</sourceProcessObject>
+<targetProcessObject>7F482019-3F54-605D-9D56-A363AAD425CD</targetProcessObject>
+<infoStructures>
+<infoStructureRef>7960DF3F-7C70-63AE-1F33-593986044428</infoStructureRef>
+<infoStructureRef>F02B376D-2D69-5C15-2B0D-200F1D488689</infoStructureRef>
+<infoStructureRef>A23597CF-FA65-36E8-5B3F-D356EAC226AB</infoStructureRef>
+</infoStructures>
+</Flow>

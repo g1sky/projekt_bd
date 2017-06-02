@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<InfoStructure class="oracle.dbtools.crest.model.design.process.InfoStructure" name="Transakcja" directorySegmentName="seg_0" id="A23597CF-FA65-36E8-5B3F-D356EAC226AB">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-02 06:46:40 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<growthRatePercent>0</growthRatePercent>
+<growthRateUnit>Day</growthRateUnit>
+<volume>0</volume>
+<used_attributes>
+<attributeRef>DE9F0464-F7E2-1E5A-E1D3-99E408BCCF9A</attributeRef>
+<attributeRef>9D2E8AD2-F19C-FE5D-777D-271B4FD50FF7</attributeRef>
+<attributeRef>BE088F6E-8259-C648-F472-9247A4886850</attributeRef>
+</used_attributes>
+</InfoStructure>

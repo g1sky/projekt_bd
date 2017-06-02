@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="demo.model.AppModule">
+      <AppModuleConfig name="15C67AC43DD" DBconnection="java:comp/env/jdbc/gieldaDS" ApplicationName="demo.model.AppModule" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" JDBCName="gielda" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="AppModuleLocal" jbo.project="demo.model.Model">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle" JDBCDataSource="java:comp/env/jdbc/gieldaDS"/>
+         <Security AppModuleJndiName="demo.model.AppModule"/>
+         <Tester FullProxyInterfaceName="demo.model.common.AppModule"/>
+         <Custom ns0:_testers_credentials_needed="true" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

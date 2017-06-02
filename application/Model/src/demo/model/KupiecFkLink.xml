@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="KupiecFkLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="demo.model.KupiecFkAssoc">
+  <ViewLinkDefEnd
+    Name="UzytkownikView"
+    Cardinality="1"
+    Source="true"
+    Owner="demo.model.UzytkownikView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="UzytkownikView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.UzytkownikView.Nickname"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TransakcjaView1"
+    Cardinality="-1"
+    Owner="demo.model.TransakcjaView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TransakcjaView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.TransakcjaView.Kupiec"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

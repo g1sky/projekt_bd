@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TransakcjaFkAssoc"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Transakcja"
+    Cardinality="1"
+    Source="true"
+    Owner="demo.model.Transakcja">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Transakcja"/>
+      <Attr Name="_foreignKey" Value="demo.model.Transakcja.TransakcjaPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.Transakcja.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="TowarWTransakcji"
+    Cardinality="-1"
+    Owner="demo.model.TowarWTransakcji">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="TowarWTransakcji"/>
+      <Attr Name="_foreignKey" Value="demo.model.TowarWTransakcji.TransakcjaFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.TowarWTransakcji.IdTransakcji"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

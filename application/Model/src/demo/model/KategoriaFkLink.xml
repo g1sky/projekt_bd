@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="KategoriaFkLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="demo.model.KategoriaFkAssoc">
+  <ViewLinkDefEnd
+    Name="KategoriaView"
+    Cardinality="1"
+    Source="true"
+    Owner="demo.model.KategoriaView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="KategoriaView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.KategoriaView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TowarView"
+    Cardinality="-1"
+    Owner="demo.model.TowarView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TowarView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="demo.model.TowarView.IdKategorii"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

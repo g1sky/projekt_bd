@@ -67,6 +67,34 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="e-mail" id="A3289DE4-C85D-19E6-7D13-B74AB03E771C">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-02 07:01:42 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<engineerTo>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60</dataTypeSize>
+<ownDataTypeParameters>60,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nr_telefonu" id="253DDE83-7E06-E404-37D8-6E235342B77E">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-02 07:02:05 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<engineerTo>
+<item key="718E9545-745C-5A67-DC2B-9B267F39EF6E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>0</dataTypePrecision>
+<dataTypeScale>12</dataTypeScale>
+<ownDataTypeParameters>,0,12</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="DD510AF3-22BA-9532-62E1-6BCEC075CAE1" name="nickname_key">
