@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DataFlowDesign class="oracle.dbtools.crest.model.design.process.DataFlowDesign" name="Zarzadzanie ofertami Diagram" id="06482365-D26F-0749-538B-16C07B776A94" mainViewID="02642F72-9DC5-8FA2-C384-FF59C021291B" topLevel="false" parentDFD_ID="8E29F97B-85B9-EDC1-5638-EE425CFC875D">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-03 21:33:30 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<shouldBeOpen>true</shouldBeOpen>
+<process>9A172D44-B0F8-0F0D-72A1-09427E7183A9</process>
+<processOrderString>1512EA1F-F1F9-6EE8-5081-966538149242,A9F8D346-E592-078E-F98A-97285E17D290,5E0959AA-331E-416F-CCE8-5C2476B1660E</processOrderString>
+</DataFlowDesign>

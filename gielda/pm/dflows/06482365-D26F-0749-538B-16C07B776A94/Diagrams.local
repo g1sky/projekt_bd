@@ -1,0 +1,4 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.process.DataFlowDesign>
+   <object objectType="main_view" objectID="02642F72-9DC5-8FA2-C384-FF59C021291B" name="Zarzadzanie ofertami Diagram" visible="true"/>
+</oracle.dbtools.crest.model.design.process.DataFlowDesign>

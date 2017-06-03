@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dodaj towar" directorySegmentName="seg_0" id="D5F026DA-9BDA-3AB7-A847-9DC30C9ED039">
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Nowe dane ofertyv2" directorySegmentName="seg_0" id="CD8FA3D3-E4DE-AA33-973D-1B9F5DBAE9FA">
 <createdBy>sgorski</createdBy>
-<createdTime>2017-06-01 18:52:02 UTC</createdTime>
+<createdTime>2017-06-03 21:48:26 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
 <destination>624B7CB3-821E-E6F1-7615-290A13846FE7</destination>
 <logging>false</logging>
@@ -9,10 +9,10 @@
 <opDelete>false</opDelete>
 <opRead>false</opRead>
 <opUpdate>false</opUpdate>
-<sourceProcessObject>D2440D7A-E428-DB47-E055-7B5401E7AF5D</sourceProcessObject>
+<parentObject>BB6F0B30-DEB2-E1B9-9B20-4105C4A9C39E</parentObject>
+<sourceProcessObject>A9F8D346-E592-078E-F98A-97285E17D290</sourceProcessObject>
 <targetProcessObject>624B7CB3-821E-E6F1-7615-290A13846FE7</targetProcessObject>
 <infoStructures>
-<infoStructureRef>2BD2DF76-17FE-D21A-06A3-BB69B37FE787</infoStructureRef>
-<infoStructureRef>292BD3A4-F25C-3135-E013-C818C52FEC5D</infoStructureRef>
+<infoStructureRef>EB07657D-56C3-D280-FDF3-B7DD0ED8D61A</infoStructureRef>
 </infoStructures>
 </Flow>

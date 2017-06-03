@@ -7,9 +7,11 @@
 <growthRateUnit>Day</growthRateUnit>
 <volume>0</volume>
 <used_attributes>
+<attributeRef>A3289DE4-C85D-19E6-7D13-B74AB03E771C</attributeRef>
 <attributeRef>AA6070C2-BB01-8A73-5173-E3B8642BE739</attributeRef>
 <attributeRef>E6669F5C-0A37-FC8D-E639-3F6870F54866</attributeRef>
 <attributeRef>B76250C7-469A-A626-88F8-760B734EA4D5</attributeRef>
 <attributeRef>13FD38F5-713E-AFFD-E5DF-94BE1F839199</attributeRef>
+<attributeRef>253DDE83-7E06-E404-37D8-6E235342B77E</attributeRef>
 </used_attributes>
 </InfoStructure>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Oferta" directorySegmentName="seg_0" id="60A97ED5-64AD-640A-D8C9-FA708D371C67">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-03 21:57:07 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<destination>5E0959AA-331E-416F-CCE8-5C2476B1660E</destination>
+<logging>false</logging>
+<opCreate>false</opCreate>
+<opDelete>false</opDelete>
+<opRead>false</opRead>
+<opUpdate>false</opUpdate>
+<parentObject>7BB2444B-A703-DBFA-1E54-BB83A97168E2</parentObject>
+<sourceProcessObject>99E5A972-9718-E3C5-FC1F-8773C6F47DC5</sourceProcessObject>
+<targetProcessObject>5E0959AA-331E-416F-CCE8-5C2476B1660E</targetProcessObject>
+<infoStructures>
+<infoStructureRef>7960DF3F-7C70-63AE-1F33-593986044428</infoStructureRef>
+</infoStructures>
+</Flow>

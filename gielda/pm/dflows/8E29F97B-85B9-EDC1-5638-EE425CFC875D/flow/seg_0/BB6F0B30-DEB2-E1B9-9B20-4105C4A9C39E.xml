@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dodaj oferte" directorySegmentName="seg_0" id="BB6F0B30-DEB2-E1B9-9B20-4105C4A9C39E">
+<Flow class="oracle.dbtools.crest.model.design.process.Flow" name="Dane ofertyv2" directorySegmentName="seg_0" id="BB6F0B30-DEB2-E1B9-9B20-4105C4A9C39E">
 <createdBy>sgorski</createdBy>
 <createdTime>2017-06-01 18:56:15 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>
@@ -12,6 +12,8 @@
 <sourceProcessObject>9A172D44-B0F8-0F0D-72A1-09427E7183A9</sourceProcessObject>
 <targetProcessObject>624B7CB3-821E-E6F1-7615-290A13846FE7</targetProcessObject>
 <infoStructures>
+<infoStructureRef>EB07657D-56C3-D280-FDF3-B7DD0ED8D61A</infoStructureRef>
+<infoStructureRef>7960DF3F-7C70-63AE-1F33-593986044428</infoStructureRef>
 <infoStructureRef>EB07657D-56C3-D280-FDF3-B7DD0ED8D61A</infoStructureRef>
 </infoStructures>
 </Flow>
