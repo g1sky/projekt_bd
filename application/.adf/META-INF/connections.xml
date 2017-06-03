@@ -6,7 +6,7 @@
         <Contents>thin</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="hostname">
-        <Contents>oraas</Contents>
+        <Contents>localhost</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="subtype">
         <Contents>oraJDBC</Contents>
@@ -18,7 +18,7 @@
         <Contents>false</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="user">
-        <Contents>G1_sgorski</Contents>
+        <Contents>G5_syltom</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="sid">
         <Contents>ora2016</Contents>
