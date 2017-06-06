@@ -4,10 +4,13 @@ import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 public class BDApp {
 
@@ -111,5 +114,47 @@ public class BDApp {
         System.out.println("executing: " + query);
         Statement stmt = conn.createStatement();
         return stmt.executeQuery(query);
+    }
+    
+    public boolean loginNotFound(String login) throws SQLException{
+        Statement stmt = null;
+        String query = "SELECT COUNT(*) AS total FROM uzytkownik WHERE nickname = '" + login + "'";
+        try {
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                if(rs.getInt("total") == 0){
+                    return true;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return false;
+    }
+    
+    private DefaultTableModel dataFromResultSet(ResultSet rs) throws SQLException {
+        ResultSetMetaData rsmd = rs.getMetaData();
+        int colNum = rsmd.getColumnCount();
+        Vector<String> columnNames = new Vector<>();
+        Vector<Vector> rowData = new Vector<>();
+
+        for (int i = 0; i < colNum; i++) {
+            columnNames.add(rsmd.getColumnLabel(i + 1));
+        }
+
+        while (rs.next()) {
+            Vector<Object> row = new Vector<>();
+            for (int i = 0; i < colNum; i++) {
+                Object obj = rs.getString(i + 1);
+                row.add(obj);
+            }
+            rowData.add(row);
+        }
+        return new DefaultTableModel(rowData, columnNames);
     }
 }
