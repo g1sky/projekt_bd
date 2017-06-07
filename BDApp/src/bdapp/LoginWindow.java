@@ -32,11 +32,6 @@ public class LoginWindow extends JFrame {
                 dispose();
                 new AppWindow(this.parent);
             }
-//            if (this.parent.connectToBD(username_tf.getText(), passwrd_tf.getText())) {
-//                System.out.println("polaczono z baza");
-//                dispose();
-//                new AppWindow(this.parent);
-//            }
         });
 
         JLabel l1 = new JLabel("username: ");

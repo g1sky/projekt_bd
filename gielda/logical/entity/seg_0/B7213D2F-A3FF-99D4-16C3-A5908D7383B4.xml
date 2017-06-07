@@ -64,8 +64,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
-<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<dataTypeSize>170</dataTypeSize>
+<ownDataTypeParameters>170,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="e-mail" id="A3289DE4-C85D-19E6-7D13-B74AB03E771C">
 <createdBy>sgorski</createdBy>

@@ -116,7 +116,7 @@ public class BDApp {
         return stmt.executeQuery(query);
     }
     
-    public boolean loginNotFound(String login) throws SQLException{
+    public boolean userExists(String login) throws SQLException{
         Statement stmt = null;
         String query = "SELECT COUNT(*) AS total FROM uzytkownik WHERE nickname = '" + login + "'";
         try {
@@ -124,7 +124,7 @@ public class BDApp {
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
                 if(rs.getInt("total") == 0){
-                    return true;
+                    return false;
                 }
             }
         } catch (SQLException e) {
@@ -134,7 +134,27 @@ public class BDApp {
                 stmt.close();
             }
         }
-        return false;
+        return true;
+    }
+    
+    public String getUserPassword(String login) throws SQLException{
+        String password = null;
+        Statement stmt = null;
+        String query = "SELECT haslo FROM uzytkownik WHERE nickname = '" + login + "'";
+        try {
+            stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                password = rs.getString("haslo");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return password;
     }
     
     private DefaultTableModel dataFromResultSet(ResultSet rs) throws SQLException {

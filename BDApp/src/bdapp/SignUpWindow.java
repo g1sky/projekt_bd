@@ -5,8 +5,8 @@
  */
 package bdapp;
 
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.SQLException;
 import java.text.MessageFormat;
 import java.util.Arrays;
@@ -56,6 +56,7 @@ public class SignUpWindow extends javax.swing.JPanel {
         repeatPasswordField = new javax.swing.JPasswordField();
         createAccountButton = new javax.swing.JButton();
         errorLabel = new javax.swing.JLabel();
+        registerInfoLabel = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(640, 480));
 
@@ -94,6 +95,9 @@ public class SignUpWindow extends javax.swing.JPanel {
         errorLabel.setForeground(new java.awt.Color(255, 0, 0));
         errorLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        registerInfoLabel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        registerInfoLabel.setForeground(new java.awt.Color(0, 102, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,6 +106,8 @@ public class SignUpWindow extends javax.swing.JPanel {
                 .addGap(54, 54, 54)
                 .addComponent(backButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(registerInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(createAccountButton)
                 .addGap(74, 74, 74))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -113,7 +119,6 @@ public class SignUpWindow extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(errorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(loginLabel)
@@ -131,7 +136,8 @@ public class SignUpWindow extends javax.swing.JPanel {
                                     .addComponent(repeatPasswordField)
                                     .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(surnameTextField)
-                                    .addComponent(loginTextField))))))
+                                    .addComponent(loginTextField)))
+                            .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(129, 129, 129))
         );
         layout.setVerticalGroup(
@@ -169,10 +175,15 @@ public class SignUpWindow extends javax.swing.JPanel {
                     .addComponent(repeatPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backButton)
-                    .addComponent(createAccountButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(backButton)
+                            .addComponent(createAccountButton)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(registerInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(35, 35, 35))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -189,7 +200,7 @@ public class SignUpWindow extends javax.swing.JPanel {
                 errorLabel.setText("Pole Nazwisko musi składać się wyłącznie z liter");
             }else if(loginTextField.getText().isEmpty()){
                 errorLabel.setText("Pole Nazwa użytkownika jest wymagane");
-            }else if(!parent.parent.loginNotFound(loginTextField.getText())){
+            }else if(parent.parent.userExists(loginTextField.getText())){
                 errorLabel.setText("Ta nazwa użytkownika jest już zajęta. Wybierz inną.");
             }else if(emailTextField.getText().isEmpty()){
                 errorLabel.setText("Pole Adres e-mail jest wymagane");
@@ -213,36 +224,40 @@ public class SignUpWindow extends javax.swing.JPanel {
         return false;
     }
     
-    public String hashPassword(){
-        String passwordToHash = new String(PasswordField.getPassword());
-        String generatedPassword = null;
-        try{
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            md.update(passwordToHash.getBytes());
-            byte[] bytes = md.digest();
-            StringBuilder sb = new StringBuilder();
-            for(int i = 0; i < bytes.length; i++){
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-            generatedPassword = sb.toString();
-        }
-        catch (NoSuchAlgorithmException e){
-            e.printStackTrace();
-        }
-        return generatedPassword;
+    private void cleanForm(){
+        nameTextField.setText("");
+        surnameTextField.setText("");
+        loginTextField.setText("");
+        emailTextField.setText("");
+        phoneTextField.setText("");
+        PasswordField.setText("");
+        repeatPasswordField.setText("");
+        errorLabel.setText("");
+        registerInfoLabel.setText("");
+        createAccountButton.setEnabled(true);
     }
     
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         parent.changeView(SignInWindow.class);
+        cleanForm();
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
         if(isCorrect()){
-//            try {
-//                parent.parent.executeQuery(MessageFormat.format("INSERT INTO uzytkownik VALUES({0}, {1}, {2}, {3}, {4}, {5});", nameTextField.getText(), surnameTextField.getText(), loginTextField.getText(), hashPassword(), emailTextField.getText()));
-//            } catch (SQLException ex) {
-//                Logger.getLogger(SignUpWindow.class.getName()).log(Level.SEVERE, null, ex);
-//            }
+            try {
+                parent.parent.executeQuery(MessageFormat.format("INSERT INTO uzytkownik VALUES(''{0}'', ''{1}'', ''{2}'', ''{3}'', ''{4}'', {5})",
+                        nameTextField.getText(),
+                        surnameTextField.getText(),
+                        loginTextField.getText(),
+                        HashPassword.generateStorngPasswordHash(PasswordField.getPassword()),
+                        emailTextField.getText(),
+                        phoneTextField.getText().isEmpty() ? null : phoneTextField.getText()
+                ));
+                registerInfoLabel.setText("Konto zostało utworzone");
+                createAccountButton.setEnabled(false);
+            } catch (NoSuchAlgorithmException | InvalidKeySpecException | SQLException ex) {
+                Logger.getLogger(SignUpWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_createAccountButtonActionPerformed
 
@@ -261,6 +276,7 @@ public class SignUpWindow extends javax.swing.JPanel {
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JLabel phoneLabel;
     private javax.swing.JTextField phoneTextField;
+    private javax.swing.JLabel registerInfoLabel;
     private javax.swing.JPasswordField repeatPasswordField;
     private javax.swing.JLabel repeatPasswordLabel;
     private javax.swing.JLabel surnameLabel;

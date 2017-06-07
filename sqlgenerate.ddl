@@ -92,7 +92,7 @@ CREATE TABLE Uzytkownik
     imie        VARCHAR2 (30) NOT NULL ,
     nazwisko    VARCHAR2 (50) NOT NULL ,
     nickname    VARCHAR2 (40) NOT NULL ,
-    haslo       VARCHAR2 (30) NOT NULL ,
+    haslo       VARCHAR2 (170) NOT NULL ,
     "e-mail"    VARCHAR2 (60) NOT NULL ,
     nr_telefonu NUMBER
   ) ;

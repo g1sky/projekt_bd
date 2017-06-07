@@ -17,12 +17,13 @@ import javax.swing.JPanel;
 public class AppWindow extends JFrame {
 
     public final BDApp parent;
+    public String activeUser = null;
 
     private JPanel pane;
     private Map<Class, JPanel> map;
 
     public AppWindow(BDApp parent) {
-        super("Navigation");
+        super("Gielda");
         this.parent = parent;
         
         setSize(640, 480);
@@ -46,6 +47,7 @@ public class AppWindow extends JFrame {
         map = new HashMap<>();
         map.put(SignInWindow.class, new SignInWindow(this));
         map.put(SignUpWindow.class, new SignUpWindow(this));
+        map.put(NavigateWindow.class, new NavigateWindow(this, activeUser));
         pane = new SignInWindow(this);
         add(pane);
 

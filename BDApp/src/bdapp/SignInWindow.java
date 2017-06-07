@@ -5,6 +5,12 @@
  */
 package bdapp;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author sgorski
@@ -36,6 +42,7 @@ public class SignInWindow extends javax.swing.JPanel {
         registerButton = new javax.swing.JButton();
         loginButton = new javax.swing.JButton();
         PasswordField = new javax.swing.JPasswordField();
+        errorLabel = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(640, 480));
 
@@ -63,25 +70,30 @@ public class SignInWindow extends javax.swing.JPanel {
         PasswordField.setMinimumSize(new java.awt.Dimension(200, 21));
         PasswordField.setPreferredSize(new java.awt.Dimension(200, 21));
 
+        errorLabel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+        errorLabel.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(188, 188, 188)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(passwordLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(PasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(loginLabel)
-                        .addGap(18, 18, 18)
-                        .addComponent(loginTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(registerButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(loginButton)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(errorLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(passwordLabel)
+                            .addGap(18, 18, 18)
+                            .addComponent(PasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(loginLabel)
+                            .addGap(18, 18, 18)
+                            .addComponent(loginTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(registerButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(loginButton))))
                 .addContainerGap(189, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -95,7 +107,9 @@ public class SignInWindow extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordLabel)
                     .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(11, 11, 11)
+                .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginButton)
                     .addComponent(registerButton))
@@ -104,7 +118,20 @@ public class SignInWindow extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        // TODO add your handling code here:
+        try {
+            if(!loginTextField.getText().isEmpty() && parent.parent.userExists(loginTextField.getText())
+                    && PasswordField.getPassword().length != 0 && HashPassword.validatePassword(PasswordField.getPassword(), parent.parent.getUserPassword(loginTextField.getText()))){
+                parent.changeView(NavigateWindow.class);
+                parent.activeUser = loginTextField.getText();
+                loginTextField.setText("");
+                PasswordField.setText("");
+                errorLabel.setText("");
+            }else{
+                errorLabel.setText("Niepoprawny login lub hasło");
+            }
+        } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException ex) {
+            Logger.getLogger(SignInWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
@@ -114,6 +141,7 @@ public class SignInWindow extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField PasswordField;
+    private javax.swing.JLabel errorLabel;
     private javax.swing.JButton loginButton;
     private javax.swing.JLabel loginLabel;
     private javax.swing.JTextField loginTextField;
