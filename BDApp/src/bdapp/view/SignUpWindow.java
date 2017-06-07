@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bdapp;
+package bdapp.view;
 
+import bdapp.AppWindow;
+import bdapp.HashPassword;
+import bdapp.view.SignInWindow;
+import bdapp.view.AppPageView;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.sql.SQLException;
@@ -17,16 +21,15 @@ import java.util.logging.Logger;
  *
  * @author sgorski
  */
-public class SignUpWindow extends javax.swing.JPanel {
+public class SignUpWindow extends AppPageView {
 
     /**
      * Creates new form SignUpWindow
      */
-    private AppWindow parent;
-    
     public SignUpWindow(AppWindow parent) {
+        super(parent);
         initComponents();
-        this.parent = parent;
+        //this.parent = parent;
     }
 
     /**
@@ -52,7 +55,7 @@ public class SignUpWindow extends javax.swing.JPanel {
         loginTextField = new javax.swing.JTextField();
         emailTextField = new javax.swing.JTextField();
         phoneTextField = new javax.swing.JTextField();
-        PasswordField = new javax.swing.JPasswordField();
+        passwordField = new javax.swing.JPasswordField();
         repeatPasswordField = new javax.swing.JPasswordField();
         createAccountButton = new javax.swing.JButton();
         errorLabel = new javax.swing.JLabel();
@@ -132,7 +135,7 @@ public class SignUpWindow extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(emailTextField)
                                     .addComponent(phoneTextField)
-                                    .addComponent(PasswordField)
+                                    .addComponent(passwordField)
                                     .addComponent(repeatPasswordField)
                                     .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(surnameTextField)
@@ -168,7 +171,7 @@ public class SignUpWindow extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordLabel)
-                    .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(repeatPasswordLabel)
@@ -188,33 +191,34 @@ public class SignUpWindow extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private boolean isCorrect(){
+    private boolean isCorrect() {
         try {
-            if(nameTextField.getText().isEmpty()){
+            // to by trzeba jakoś uprościć
+            if (nameTextField.getText().isEmpty()) {
                 errorLabel.setText("Pole Imię jest wymagane");
-            }else if(!nameTextField.getText().matches("^[a-zA-Z]+$")){
+            } else if (!nameTextField.getText().matches("^[a-zA-Z]+$")) {
                 errorLabel.setText("Pole Imię musi składać się wyłącznie z liter");
-            }else if(surnameTextField.getText().isEmpty()){
+            } else if (surnameTextField.getText().isEmpty()) {
                 errorLabel.setText("Pole Nazwisko jest wymagane");
-            }else if(!surnameTextField.getText().matches("^[a-zA-Z]+$")){
+            } else if (!surnameTextField.getText().matches("^[a-zA-Z]+$")) {
                 errorLabel.setText("Pole Nazwisko musi składać się wyłącznie z liter");
-            }else if(loginTextField.getText().isEmpty()){
+            } else if (loginTextField.getText().isEmpty()) {
                 errorLabel.setText("Pole Nazwa użytkownika jest wymagane");
-            }else if(parent.parent.userExists(loginTextField.getText())){
+            } else if (getApp().userExists(loginTextField.getText())) {
                 errorLabel.setText("Ta nazwa użytkownika jest już zajęta. Wybierz inną.");
-            }else if(emailTextField.getText().isEmpty()){
+            } else if (emailTextField.getText().isEmpty()) {
                 errorLabel.setText("Pole Adres e-mail jest wymagane");
-            }else if(!emailTextField.getText().matches("^[0-9a-zA-Z.-]+@[a-zA-z.-]+\\.[A-Za-z]+$")){
+            } else if (!emailTextField.getText().matches("^[0-9a-zA-Z.-]+@[a-zA-z.-]+\\.[A-Za-z]+$")) {
                 errorLabel.setText("Niepoprawny Adres e-mail");
-            }else if(!phoneTextField.getText().isEmpty() && !phoneTextField.getText().matches("^[0-9]+$")){
+            } else if (!phoneTextField.getText().isEmpty() && !phoneTextField.getText().matches("^[0-9]+$")) {
                 errorLabel.setText("Pole Numer telefonu musi składać się wyłącznie z cyfr");
-            }else if(PasswordField.getPassword().length == 0){
+            } else if (passwordField.getPassword().length == 0) {
                 errorLabel.setText("Pole Hasło jest wymagane");
-            }else if(repeatPasswordField.getPassword().length == 0){
+            } else if (repeatPasswordField.getPassword().length == 0) {
                 errorLabel.setText("Pole Powtórz hasło jest wymagane");
-            }else if(!Arrays.equals(repeatPasswordField.getPassword(), PasswordField.getPassword())){
+            } else if (!Arrays.equals(repeatPasswordField.getPassword(), passwordField.getPassword())) {
                 errorLabel.setText("Hasła nie są zgodne ");
-            }else{
+            } else {
                 errorLabel.setText("");
                 return true;
             }
@@ -223,33 +227,33 @@ public class SignUpWindow extends javax.swing.JPanel {
         }
         return false;
     }
-    
-    private void cleanForm(){
+
+    private void cleanForm() {
         nameTextField.setText("");
         surnameTextField.setText("");
         loginTextField.setText("");
         emailTextField.setText("");
         phoneTextField.setText("");
-        PasswordField.setText("");
+        passwordField.setText("");
         repeatPasswordField.setText("");
         errorLabel.setText("");
         registerInfoLabel.setText("");
         createAccountButton.setEnabled(true);
     }
-    
+
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        parent.changeView(SignInWindow.class);
+        getWindow().changeView(SignInWindow.class);
         cleanForm();
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
-        if(isCorrect()){
+        if (isCorrect()) {
             try {
-                parent.parent.executeQuery(MessageFormat.format("INSERT INTO uzytkownik VALUES(''{0}'', ''{1}'', ''{2}'', ''{3}'', ''{4}'', {5})",
+                getApp().executeQuery(MessageFormat.format("INSERT INTO uzytkownik VALUES(''{0}'', ''{1}'', ''{2}'', ''{3}'', ''{4}'', {5})",
                         nameTextField.getText(),
                         surnameTextField.getText(),
                         loginTextField.getText(),
-                        HashPassword.generateStorngPasswordHash(PasswordField.getPassword()),
+                        HashPassword.generateStorngPasswordHash(passwordField.getPassword()),
                         emailTextField.getText(),
                         phoneTextField.getText().isEmpty() ? null : phoneTextField.getText()
                 ));
@@ -263,7 +267,6 @@ public class SignUpWindow extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField PasswordField;
     private javax.swing.JButton backButton;
     private javax.swing.JButton createAccountButton;
     private javax.swing.JLabel emailLabel;
@@ -273,6 +276,7 @@ public class SignUpWindow extends javax.swing.JPanel {
     private javax.swing.JTextField loginTextField;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JTextField nameTextField;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JLabel phoneLabel;
     private javax.swing.JTextField phoneTextField;
@@ -283,4 +287,9 @@ public class SignUpWindow extends javax.swing.JPanel {
     private javax.swing.JTextField surnameTextField;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void refresh() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

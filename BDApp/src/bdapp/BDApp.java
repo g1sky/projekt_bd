@@ -1,8 +1,12 @@
 package bdapp;
 
+import bdapp.view.SignInWindow;
 import java.awt.EventQueue;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -10,6 +14,7 @@ import java.sql.Statement;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.IntStream;
 import javax.swing.table.DefaultTableModel;
 
 public class BDApp {
@@ -24,17 +29,26 @@ public class BDApp {
         });
     }
 
+    // -------------------------------------------------------------------------
     private Connection conn;
+    private SessionManager session;
 
     public BDApp() {
+        session = null;
         conn = null;
     }
 
+    public SessionManager getSession() {
+        return session;
+    }
+
     public void close() {
-        System.out.println("closing connection");
+        System.out.print("closing connection... ");
         if (conn != null) {
             try {
+                signOut();
                 conn.close();
+                System.out.println("done");
             } catch (SQLException ex) {
                 Logger.getLogger(BDApp.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -43,9 +57,8 @@ public class BDApp {
 
     public boolean connectToBD(String username, String passwrd) {
         try {
-            conn = getConnection(username, passwrd);
+            conn = newConnection(username, passwrd);
             setRole(conn);
-            //viewTable("kategoria"); // test
         } catch (SQLException ex) {
             System.out.println(ex);
             return false;
@@ -53,44 +66,14 @@ public class BDApp {
         return true;
     }
 
-    // tylko test
-    /*
-    public void viewTable(String tableName) throws SQLException {
-        Statement stmt = null;
-        String query = "select * from G1_sgorski." + tableName;
-        try {
-            stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            ResultSetMetaData rsmd = rs.getMetaData();
-            int colNum = rsmd.getColumnCount();
-            String[] columnNames = new String[colNum + 1];
-            columnNames[0] = "KOLUMNY: ";
-            System.out.print(columnNames[0]);
-            for (int i = 1; i <= colNum; i++) {
-                columnNames[i] = rsmd.getColumnLabel(i);
-                System.out.print(columnNames[i] + "|");
-            }
-            System.out.print("\n");
-            while (rs.next()) {
-                System.out.print("\t");
-                for (int i = 1; i <= colNum; i++) {
-                    System.out.print(rs.getString(i) + "|");
-                }
-                System.out.print("\n");
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        } finally {
-            if (stmt != null) {
-                stmt.close();
-            }
-        }
-    }
-     */
     // zwraca połączenie z bazą
-    public Connection getConnection(String username, String password) throws SQLException {
+    public Connection newConnection(String username, String password) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:oracle:thin:" + username + "/" + password + "@localhost:1521:ora2016");
         System.out.println("Connected to database");
+        return conn;
+    }
+
+    public Connection getConnection() {
         return conn;
     }
 
@@ -110,54 +93,15 @@ public class BDApp {
         }
     }
 
+    // lepiej tego nie używać, jedynie dla prostych zapytań BEZ ZMIENNYCH
     public ResultSet executeQuery(String query) throws SQLException {
         System.out.println("executing: " + query);
         Statement stmt = conn.createStatement();
         return stmt.executeQuery(query);
     }
-    
-    public boolean userExists(String login) throws SQLException{
-        Statement stmt = null;
-        String query = "SELECT COUNT(*) AS total FROM uzytkownik WHERE nickname = '" + login + "'";
-        try {
-            stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                if(rs.getInt("total") == 0){
-                    return false;
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        } finally {
-            if (stmt != null) {
-                stmt.close();
-            }
-        }
-        return true;
-    }
-    
-    public String getUserPassword(String login) throws SQLException{
-        String password = null;
-        Statement stmt = null;
-        String query = "SELECT haslo FROM uzytkownik WHERE nickname = '" + login + "'";
-        try {
-            stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                password = rs.getString("haslo");
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        } finally {
-            if (stmt != null) {
-                stmt.close();
-            }
-        }
-        return password;
-    }
-    
-    private DefaultTableModel dataFromResultSet(ResultSet rs) throws SQLException {
+
+    // przyjmuje jako dodatkowy parametr tablicę z numerami kolumn, które nie są edytowalne
+    public static DefaultTableModel dataFromResultSet(ResultSet rs, int[] nonEditable) throws SQLException {
         ResultSetMetaData rsmd = rs.getMetaData();
         int colNum = rsmd.getColumnCount();
         Vector<String> columnNames = new Vector<>();
@@ -175,6 +119,74 @@ public class BDApp {
             }
             rowData.add(row);
         }
-        return new DefaultTableModel(rowData, columnNames);
+
+        DefaultTableModel model = new DefaultTableModel(rowData, columnNames) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return !IntStream.of(nonEditable).anyMatch(x -> x == column);
+            }
+        };
+
+        return model;
+    }
+
+    //--------------------------------------------------------------------------
+    public boolean signInAs(String login, char[] password) {
+        try {
+            if (!login.isEmpty() && userExists(login)
+                    && password.length != 0 && HashPassword.validatePassword(password, getUserPassword(login))) {
+                session = new SessionManager(this, login);
+
+                return true;
+            }
+        } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException ex) {
+            Logger.getLogger(SignInWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+    public void signOut() {
+        session = null;
+    }
+
+    public boolean userExists(String login) throws SQLException {
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT COUNT(*) AS total FROM g1_sgorski.uzytkownik WHERE nickname = ?");
+            stmt.setString(1, login);
+            ResultSet rs = stmt.executeQuery();//stmt.executeQuery(query);
+            while (rs.next()) {
+                if (rs.getInt("total") == 0) {
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return true;
+    }
+
+    public String getUserPassword(String login) throws SQLException {
+        String password = null;
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("SELECT haslo FROM g1_sgorski.uzytkownik WHERE nickname = ?");
+            stmt.setString(1, login);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                password = rs.getString("haslo");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return password;
     }
 }
