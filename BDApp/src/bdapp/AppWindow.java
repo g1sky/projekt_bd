@@ -1,10 +1,13 @@
 package bdapp;
 
+import bdapp.view.AllOffersWindow;
 import bdapp.view.WareManagementWindow;
 import bdapp.view.SignUpWindow;
 import bdapp.view.SignInWindow;
 import bdapp.view.NavigateWindow;
 import bdapp.view.AppPageView;
+import bdapp.view.CartWindow;
+import bdapp.view.OfferManagementWindow;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -47,6 +50,9 @@ public class AppWindow extends JFrame {
         viewMap.put(SignUpWindow.class, new SignUpWindow(this));
         viewMap.put(NavigateWindow.class, new NavigateWindow(this));
         viewMap.put(WareManagementWindow.class, new WareManagementWindow(this));
+        viewMap.put(OfferManagementWindow.class, new OfferManagementWindow(this));
+        viewMap.put(AllOffersWindow.class, new AllOffersWindow(this));
+        viewMap.put(CartWindow.class, new CartWindow(this));
         pageView = new SignInWindow(this);
         add(pageView);
 
@@ -56,11 +62,15 @@ public class AppWindow extends JFrame {
 
     public void changeView(Class clas) {
         remove(pageView);
-        pageView = viewMap.get(clas);
-        pageView.refresh();
-        add(pageView);
-        validate();
-        repaint();
+        AppPageView temp = viewMap.get(clas);
+        if (temp != null) {
+            pageView = temp;
+            add(pageView);
+            pageView.refresh();
+
+            validate();
+            repaint();
+        }
     }
 
     public BDApp getApp() {

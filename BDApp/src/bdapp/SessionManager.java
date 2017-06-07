@@ -9,14 +9,19 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 // tutaj lądują konkretne funkcje odpytujące bazę (chociaż nie wiem czy ta nazwa dobrze oddaje zadanie tej klasy)
+// tutaj pewnie wyląduje też aktualny koszyk...
 public class SessionManager {
 
     private final BDApp parent;
     private final String username;
+    
+    private Cart cart;
 
     public SessionManager(BDApp parent, String username) {
         this.parent = parent;
         this.username = username;
+        
+        this.cart = new Cart();
     }
 
     private Connection getConnection() {
@@ -25,6 +30,10 @@ public class SessionManager {
 
     public String getUsername() {
         return this.username;
+    }
+    
+    public Cart getCart(){
+        return cart;
     }
 
     public boolean addWares(String wareName, double wareAmount, int wareCategory) {
@@ -93,8 +102,55 @@ public class SessionManager {
         ResultSet rs = null;
         DefaultTableModel model = null;
         try {
-            stmt = getConnection().prepareStatement("SELECT id, nazwa, ilosc, id_kategorii FROM g1_sgorski.towar WHERE wlasciciel = ?"); // to zapytanie trzeba ulepszyć
+            stmt = getConnection().prepareStatement(
+                    "SELECT id, nazwa, ilosc, id_kategorii"
+                    + " FROM g1_sgorski.towar"
+                    + " WHERE wlasciciel = ?"); // to zapytanie trzeba ulepszyć
             stmt.setString(1, getUsername());
+            rs = stmt.executeQuery();
+            model = BDApp.dataFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
+    }
+
+    public DefaultTableModel getUserOffers() throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "SELECT t.id, t.nazwa, o.ilosc, o.cena_jednostkowa"
+                    + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id)"
+                    + " WHERE t.wlasciciel = ?"
+            );
+            stmt.setString(1, getUsername());
+            rs = stmt.executeQuery();
+            model = BDApp.dataFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
+    }
+
+    public DefaultTableModel getAllOffers() throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "SELECT t.id, t.nazwa, o.ilosc, o.cena_jednostkowa, t.wlasciciel"
+                    + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id)"
+            );
             rs = stmt.executeQuery();
             model = BDApp.dataFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
         } catch (SQLException e) {

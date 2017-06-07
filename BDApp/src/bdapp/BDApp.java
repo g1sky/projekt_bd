@@ -154,7 +154,7 @@ public class BDApp {
         try {
             stmt = conn.prepareStatement("SELECT COUNT(*) AS total FROM g1_sgorski.uzytkownik WHERE nickname = ?");
             stmt.setString(1, login);
-            ResultSet rs = stmt.executeQuery();//stmt.executeQuery(query);
+            ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 if (rs.getInt("total") == 0) {
                     return false;

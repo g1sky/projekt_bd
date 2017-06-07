@@ -4,11 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/view/WareManagementWindow.java</file>
+            <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/view/OfferManagementWindow.java</file>
             <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/AppWindow.java</file>
+            <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/Cart.java</file>
+            <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/view/CartWindow.java</file>
             <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/SessionManager.java</file>
+            <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/view/AllOffersWindow.java</file>
             <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/BDApp.java</file>
             <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/view/AppPageView.java</file>
-            <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/LoginWindow.java</file>
             <file>file:/E:/user/Documents/Dokumenty/Projekt%20BD/BDApp/src/bdapp/view/NavigateWindow.java</file>
         </group>
     </open-files>

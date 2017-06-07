@@ -42,6 +42,7 @@ public class WareManagementWindow extends AppPageView {
         updateWareDate = new javax.swing.JButton();
         removeWares = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         wareTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,6 +102,8 @@ public class WareManagementWindow extends AppPageView {
             }
         });
 
+        jLabel1.setText("Dane nowego towaru:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,7 +116,8 @@ public class WareManagementWindow extends AppPageView {
                         .addComponent(wareCategory)
                         .addComponent(wareName, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
                     .addComponent(manageOfferButton)
-                    .addComponent(backButton))
+                    .addComponent(backButton)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -131,25 +135,29 @@ public class WareManagementWindow extends AppPageView {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(78, 78, 78)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(refreshButton)
-                    .addComponent(addWareButton)
-                    .addComponent(updateWareDate)
-                    .addComponent(removeWares))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(refreshButton)
+                        .addComponent(addWareButton)
+                        .addComponent(updateWareDate)
+                        .addComponent(removeWares))
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(wareName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(wareAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(wareCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
+                        .addGap(81, 81, 81)
                         .addComponent(manageOfferButton)
-                        .addGap(137, 137, 137)
-                        .addComponent(backButton))
-                    .addComponent(tableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(backButton)
+                        .addGap(20, 20, 20))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -170,14 +178,7 @@ public class WareManagementWindow extends AppPageView {
     }//GEN-LAST:event_addWareButtonActionPerformed
 
     private void manageOfferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOfferButtonActionPerformed
-        /*
-        int i = wareTable.getSelectedRow();
-        TableModel model = wareTable.getModel();
-        String wareName = model.getValueAt(i, 1).toString();
-        double wareAmount = Double.parseDouble(model.getValueAt(i, 2).toString());
-         */
-        //String wareName = model.getValueAt(i, 3).toString();
-
+        getWindow().changeView(OfferManagementWindow.class);
     }//GEN-LAST:event_manageOfferButtonActionPerformed
 
     private void updateWareDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateWareDateActionPerformed
@@ -226,6 +227,7 @@ public class WareManagementWindow extends AppPageView {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addWareButton;
     private javax.swing.JButton backButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton manageOfferButton;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton removeWares;
