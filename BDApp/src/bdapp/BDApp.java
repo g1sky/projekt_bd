@@ -101,7 +101,7 @@ public class BDApp {
     }
 
     // przyjmuje jako dodatkowy parametr tablicę z numerami kolumn, które nie są edytowalne
-    public static DefaultTableModel dataFromResultSet(ResultSet rs, int[] nonEditable) throws SQLException {
+    public static DefaultTableModel dataModelFromResultSet(ResultSet rs, int[] nonEditable) throws SQLException {
         ResultSetMetaData rsmd = rs.getMetaData();
         int colNum = rsmd.getColumnCount();
         Vector<String> columnNames = new Vector<>();
@@ -133,10 +133,11 @@ public class BDApp {
     //--------------------------------------------------------------------------
     public boolean signInAs(String login, char[] password) {
         try {
-            if (!login.isEmpty() && userExists(login)
-                    && password.length != 0 && HashPassword.validatePassword(password, getUserPassword(login))) {
+            if (!login.isEmpty()
+                    && userExists(login)
+                    && password.length != 0
+                    && HashPassword.validatePassword(password, getUserPassword(login))) {
                 session = new SessionManager(this, login);
-
                 return true;
             }
         } catch (SQLException | NoSuchAlgorithmException | InvalidKeySpecException ex) {

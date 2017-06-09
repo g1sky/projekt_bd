@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -15,12 +16,20 @@ public class SessionManager {
     private final BDApp parent;
     private final String username;
     
+    private HashMap<String, Integer> categoryIDs;
+
     private Cart cart;
 
     public SessionManager(BDApp parent, String username) {
         this.parent = parent;
         this.username = username;
         
+        try {
+            categoryIDs = getCategoriesMap(); // nie wiem jak często to powinno być odświeżane
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         this.cart = new Cart();
     }
 
@@ -31,9 +40,13 @@ public class SessionManager {
     public String getUsername() {
         return this.username;
     }
-    
-    public Cart getCart(){
+
+    public Cart getCart() {
         return cart;
+    }
+    
+    public HashMap<String, Integer> getCategories(){
+        return categoryIDs;
     }
 
     public boolean addWares(String wareName, double wareAmount, int wareCategory) {
@@ -103,12 +116,13 @@ public class SessionManager {
         DefaultTableModel model = null;
         try {
             stmt = getConnection().prepareStatement(
-                    "SELECT id, nazwa, ilosc, id_kategorii"
-                    + " FROM g1_sgorski.towar"
-                    + " WHERE wlasciciel = ?"); // to zapytanie trzeba ulepszyć
+                    "SELECT t.id, t.nazwa AS nazwa, t.ilosc AS ilość, k.nazwa AS kategoria"
+                    + " FROM g1_sgorski.towar t JOIN g1_sgorski.kategoria k ON (t.id_kategorii=k.id)"
+                    + " WHERE wlasciciel = ?"
+            );
             stmt.setString(1, getUsername());
             rs = stmt.executeQuery();
-            model = BDApp.dataFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -125,13 +139,13 @@ public class SessionManager {
         DefaultTableModel model = null;
         try {
             stmt = getConnection().prepareStatement(
-                    "SELECT t.id, t.nazwa, o.ilosc, o.cena_jednostkowa"
-                    + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id)"
+                    "SELECT t.id, t.nazwa AS NAZWA_TOWARU, o.ilosc AS ILOŚĆ, o.cena_jednostkowa AS CENA_JEDNOSTKOWA, k.nazwa AS kategoria"
+                    + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id) JOIN g1_sgorski.kategoria k ON (t.id_kategorii=k.id)"
                     + " WHERE t.wlasciciel = ?"
             );
             stmt.setString(1, getUsername());
             rs = stmt.executeQuery();
-            model = BDApp.dataFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs, new int[]{0});
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -142,17 +156,26 @@ public class SessionManager {
         return model;
     }
 
-    public DefaultTableModel getAllOffers() throws SQLException {
+    public DefaultTableModel getAllOffers(boolean hideMyOffers) throws SQLException {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         DefaultTableModel model = null;
         try {
-            stmt = getConnection().prepareStatement(
-                    "SELECT t.id, t.nazwa, o.ilosc, o.cena_jednostkowa, t.wlasciciel"
-                    + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id)"
-            );
+            if (hideMyOffers) {
+                stmt = getConnection().prepareStatement(
+                        "SELECT t.id, t.nazwa, o.ilosc, o.cena_jednostkowa, k.nazwa AS kategoria, t.wlasciciel AS właściciel"
+                        + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id) JOIN g1_sgorski.kategoria k ON (t.id_kategorii=k.id)"
+                        + " WHERE t.wlasciciel != ?"
+                );
+                stmt.setString(1, getUsername()); // to tak opcjonalnie
+            } else {
+                stmt = getConnection().prepareStatement(
+                        "SELECT t.id, t.nazwa, o.ilosc, o.cena_jednostkowa, k.nazwa AS kategoria, t.wlasciciel AS właściciel"
+                        + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id) JOIN g1_sgorski.kategoria k ON (t.id_kategorii=k.id)"
+                );
+            }
             rs = stmt.executeQuery();
-            model = BDApp.dataFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -161,5 +184,32 @@ public class SessionManager {
             }
         }
         return model;
+    }
+
+    private HashMap<String, Integer> getCategoriesMap() throws SQLException {
+        HashMap<String, Integer> result = new HashMap<>();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "SELECT id, nazwa"
+                    + " FROM g1_sgorski.kategoria"
+            );
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                System.out.println(rs.getInt(1) + " " + rs.getString(2));
+                Integer value = rs.getInt(1);
+                String key = rs.getString(2);
+                result.put(key, value);
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return result;
     }
 }

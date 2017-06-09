@@ -1,19 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bdapp.view;
 
 import bdapp.AppWindow;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ListSelectionModel;
 
-/**
- *
- * @author user
- */
 public class AllOffersWindow extends AppPageView {
 
     /**
@@ -22,6 +14,8 @@ public class AllOffersWindow extends AppPageView {
     public AllOffersWindow(AppWindow parent) {
         super(parent);
         initComponents();
+
+        offerTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
 
     /**
@@ -69,10 +63,13 @@ public class AllOffersWindow extends AppPageView {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(121, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(backButton)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(121, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(backButton)))
                 .addGap(20, 20, 20))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -91,7 +88,7 @@ public class AllOffersWindow extends AppPageView {
     @Override
     public void refresh() {
         try {
-            offerTable.setModel(getSession().getAllOffers());
+            offerTable.setModel(getSession().getAllOffers(false));
         } catch (SQLException ex) {
             Logger.getLogger(AllOffersWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
