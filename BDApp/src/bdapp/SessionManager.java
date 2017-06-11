@@ -1,5 +1,7 @@
 package bdapp;
 
+import bdapp.entities.Offer;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,22 +17,21 @@ public class SessionManager {
 
     private final BDApp parent;
     private final String username;
-    
+
     private HashMap<String, Integer> categoryIDs;
 
-    private Cart cart;
-
+    //private Cart cart;
     public SessionManager(BDApp parent, String username) {
         this.parent = parent;
         this.username = username;
-        
+
         try {
             categoryIDs = getCategoriesMap(); // nie wiem jak często to powinno być odświeżane
         } catch (SQLException ex) {
             Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        this.cart = new Cart();
+        //this.cart = new Cart();
     }
 
     private Connection getConnection() {
@@ -41,11 +42,12 @@ public class SessionManager {
         return this.username;
     }
 
+    /*
     public Cart getCart() {
         return cart;
     }
-    
-    public HashMap<String, Integer> getCategories(){
+     */
+    public HashMap<String, Integer> getCategories() {
         return categoryIDs;
     }
 
@@ -198,7 +200,6 @@ public class SessionManager {
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-                System.out.println(rs.getInt(1) + " " + rs.getString(2));
                 Integer value = rs.getInt(1);
                 String key = rs.getString(2);
                 result.put(key, value);
@@ -212,4 +213,146 @@ public class SessionManager {
         }
         return result;
     }
+
+    public Offer getOffer(int wareID) throws SQLException {
+        Offer offer = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "SELECT t.id, t.nazwa AS nazwa_towaru, o.ilosc, o.cena_jednostkowa, k.nazwa AS kategoria"
+                    + " FROM g1_sgorski.towar t JOIN g1_sgorski.oferta o ON (t.id=o.id_towaru) JOIN g1_sgorski.kategoria k ON (t.id_kategorii=k.id)"
+                    + " WHERE t.id = ?"
+            );
+            stmt.setInt(1, wareID);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                offer = new Offer(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getDouble(4), rs.getString(5));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return offer;
+    }
+
+    public boolean addToCart(Offer offer) {
+        // no i tutaj dzieje się magia...
+        String call
+                = "BEGIN"
+                + " ? := CASE WHEN (g1_sgorski.add_to_cart(?, ?, ?)) "
+                + "       THEN 1 "
+                + "       ELSE 0"
+                + "      END;"
+                + "END;";
+        CallableStatement cstmt = null;
+        try {
+            cstmt = getConnection().prepareCall(call);
+            cstmt.setQueryTimeout(1800);
+            cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+
+            cstmt.setInt(2, offer.wareID);
+            cstmt.setDouble(3, offer.wareAmount);
+            cstmt.setString(4, username);
+
+            cstmt.execute();
+            return cstmt.getInt(1) == 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+    public DefaultTableModel getCart() throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement("SELECT t.id, t.nazwa, twt.ilosc, twt.cena_jednostkowa"
+                    + " FROM g1_sgorski.towar t JOIN g1_sgorski.towar_w_transakcji twt ON (t.id = twt.id_towaru) JOIN g1_sgorski.transakcja tr ON (twt.id_transakcji = tr.id)"
+                    + " WHERE tr.kupiec = ? AND tr.stan = 0");
+            stmt.setString(1, getUsername());
+
+            rs = stmt.executeQuery();
+            model = BDApp.dataModelFromResultSet(rs, new int[]{0, 1, 2, 3}); // static - jakoś to nie pasuje
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
+    }
+
+    public boolean submitCart() {
+        String call = "BEGIN"
+                + " ? := CASE WHEN (g1_sgorski.submit_cart(?)) "
+                + "       THEN 1 "
+                + "       ELSE 0"
+                + "      END;"
+                + "END;";
+        CallableStatement cstmt = null;
+        try {
+            cstmt = getConnection().prepareCall(call);
+            cstmt.setQueryTimeout(1800);
+            cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+            cstmt.setString(2, username);
+
+            cstmt.execute();
+            return cstmt.getInt(1) == 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+    public boolean clearCart() {
+        String call = "BEGIN"
+                + " ? := CASE WHEN (g1_sgorski.clear_cart(?)) "
+                + "       THEN 1 "
+                + "       ELSE 0"
+                + "      END;"
+                + "END;";
+        CallableStatement cstmt = null;
+        try {
+            cstmt = getConnection().prepareCall(call);
+            cstmt.setQueryTimeout(1800);
+            cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+            cstmt.setString(2, username);
+
+            cstmt.execute();
+            return cstmt.getInt(1) == 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+    public boolean removeFromCart(int wareID) {
+        String call = "BEGIN"
+                + " ? := CASE WHEN (g1_sgorski.remove_from_cart(?, ?)) "
+                + "       THEN 1 "
+                + "       ELSE 0"
+                + "      END;"
+                + "END;";
+        CallableStatement cstmt = null;
+        try {
+            cstmt = getConnection().prepareCall(call);
+            cstmt.setQueryTimeout(1800);
+            cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+            cstmt.setInt(2, wareID);
+            cstmt.setString(3, username);
+
+            cstmt.execute();
+            return cstmt.getInt(1) == 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
 }

@@ -1,7 +1,5 @@
 package bdapp;
 
-import bdapp.AppWindow;
-import bdapp.BDApp;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;

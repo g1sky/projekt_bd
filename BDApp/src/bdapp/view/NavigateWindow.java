@@ -32,9 +32,9 @@ public class NavigateWindow extends AppPageView {
 
         logedAsLabel = new javax.swing.JLabel();
         signOutButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ownedWareButton = new javax.swing.JButton();
+        myOfferButton = new javax.swing.JButton();
+        findOfferButton = new javax.swing.JButton();
         cartButton = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(640, 480));
@@ -49,24 +49,24 @@ public class NavigateWindow extends AppPageView {
             }
         });
 
-        jButton1.setText("Posiadane towary");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ownedWareButton.setText("Posiadane towary");
+        ownedWareButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ownedWareButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Wystawione oferty");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        myOfferButton.setText("Wystawione oferty");
+        myOfferButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                myOfferButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Przeszukuj oferty");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        findOfferButton.setText("Przeszukuj oferty");
+        findOfferButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                findOfferButtonActionPerformed(evt);
             }
         });
 
@@ -83,22 +83,19 @@ public class NavigateWindow extends AppPageView {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(logedAsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(logedAsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(signOutButton)
-                        .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
-                            .addComponent(jButton2))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cartButton)
-                        .addGap(17, 17, 17))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(ownedWareButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(myOfferButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(findOfferButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(signOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cartButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,13 +108,13 @@ public class NavigateWindow extends AppPageView {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(ownedWareButton)
                     .addComponent(cartButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(myOfferButton)
                 .addGap(73, 73, 73)
-                .addComponent(jButton3)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addComponent(findOfferButton)
+                .addContainerGap(238, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -126,17 +123,17 @@ public class NavigateWindow extends AppPageView {
         getWindow().changeView(SignInWindow.class);
     }//GEN-LAST:event_signOutButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ownedWareButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ownedWareButtonActionPerformed
         getWindow().changeView(WareManagementWindow.class);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ownedWareButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void myOfferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myOfferButtonActionPerformed
         getWindow().changeView(OfferManagementWindow.class);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_myOfferButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void findOfferButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_findOfferButtonActionPerformed
         getWindow().changeView(AllOffersWindow.class);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_findOfferButtonActionPerformed
 
     private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
         getWindow().changeView(CartWindow.class);
@@ -145,10 +142,10 @@ public class NavigateWindow extends AppPageView {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cartButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton findOfferButton;
     private javax.swing.JLabel logedAsLabel;
+    private javax.swing.JButton myOfferButton;
+    private javax.swing.JButton ownedWareButton;
     private javax.swing.JButton signOutButton;
     // End of variables declaration//GEN-END:variables
 

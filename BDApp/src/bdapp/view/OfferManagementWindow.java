@@ -36,6 +36,8 @@ public class OfferManagementWindow extends AppPageView {
         removeOfferButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(640, 480));
+
         offerTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -104,7 +106,7 @@ public class OfferManagementWindow extends AppPageView {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(88, Short.MAX_VALUE)
+                .addContainerGap(89, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))

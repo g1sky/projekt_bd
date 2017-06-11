@@ -1,0 +1,4 @@
+0 - koszyk (zatwierdza kupiec)
+1 - koszyk zatwierdzony, czekanie na zap³atê (zatwierdza sprzedawca)
+2 - zap³acono, oczekiwanie na potwierdzenie odbioru (?) (zatwierdza kupiec)
+3 - transakcja zakoñczona
