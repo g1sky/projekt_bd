@@ -35,7 +35,7 @@ public class OfferManagementWindow extends AppPageView {
         jLabel3 = new javax.swing.JLabel();
         wareNameField = new javax.swing.JTextField();
         wareAmountField = new javax.swing.JTextField();
-        warePrizeField = new javax.swing.JTextField();
+        warePriceField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         offerTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -94,7 +94,7 @@ public class OfferManagementWindow extends AppPageView {
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
                                 .addComponent(wareAmountField)
-                                .addComponent(warePrizeField)))
+                                .addComponent(warePriceField)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         newOfferDialogLayout.setVerticalGroup(
@@ -111,7 +111,7 @@ public class OfferManagementWindow extends AppPageView {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(warePrizeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(warePriceField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(newOfferDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancelNew)
@@ -129,7 +129,6 @@ public class OfferManagementWindow extends AppPageView {
 
             }
         ));
-        offerTable.setCellSelectionEnabled(false);
         jScrollPane1.setViewportView(offerTable);
         offerTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
@@ -141,7 +140,6 @@ public class OfferManagementWindow extends AppPageView {
 
             }
         ));
-        wareTable.setCellSelectionEnabled(false);
         jScrollPane2.setViewportView(wareTable);
         wareTable.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
@@ -187,39 +185,39 @@ public class OfferManagementWindow extends AppPageView {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
                                 .addComponent(backButton))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(122, 122, 122)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addGap(253, 253, 253)
-                                        .addComponent(jLabel5))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(addOfferButton)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(editOfferButton)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(removeOfferButton)))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(153, 153, 153)
+                                .addComponent(addOfferButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(editOfferButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(removeOfferButton)))
+                        .addGap(155, 155, 155)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(122, 122, 122)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(145, 145, 145))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addOfferButton)
                     .addComponent(editOfferButton)
-                    .addComponent(removeOfferButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(removeOfferButton)
+                    .addComponent(addOfferButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jLabel4))
@@ -281,7 +279,7 @@ public class OfferManagementWindow extends AppPageView {
                 i = wareTable.getSelectedRow();
                 model = wareTable.getModel();
                 wareId = Integer.parseInt(model.getValueAt(i, 0).toString());
-                if (getSession().addOffer(wareId, Double.parseDouble(wareAmountField.getText()), Double.parseDouble(warePrizeField.getText()))) {
+                if (getSession().addOffer(wareId, Double.parseDouble(wareAmountField.getText()), Double.parseDouble(warePriceField.getText()))) {
                     hideOfferDialog();
                     refresh();
                 } else {
@@ -292,7 +290,7 @@ public class OfferManagementWindow extends AppPageView {
                 i = offerTable.getSelectedRow();
                 model = offerTable.getModel();
                 wareId = Integer.parseInt(model.getValueAt(i, 0).toString());
-                getSession().updateOffer(wareId, Double.parseDouble(wareAmountField.getText()), Double.parseDouble(warePrizeField.getText()));
+                getSession().updateOffer(wareId, Double.parseDouble(wareAmountField.getText()), Double.parseDouble(warePriceField.getText()));
                 break;
         }
         hideOfferDialog();
@@ -318,7 +316,7 @@ public class OfferManagementWindow extends AppPageView {
     private javax.swing.JButton submitOffer;
     private javax.swing.JTextField wareAmountField;
     private javax.swing.JTextField wareNameField;
-    private javax.swing.JTextField warePrizeField;
+    private javax.swing.JTextField warePriceField;
     private javax.swing.JTable wareTable;
     // End of variables declaration//GEN-END:variables
 
@@ -354,7 +352,7 @@ public class OfferManagementWindow extends AppPageView {
                 wareNameField.setText(wareName);
                 wareNameField.setEditable(false);
                 wareAmountField.setText("");
-                warePrizeField.setText("");
+                warePriceField.setText("");
                 break;
             case MODIFY:
                 newOfferDialog.setTitle("Modyfikacja oferty");
@@ -366,7 +364,7 @@ public class OfferManagementWindow extends AppPageView {
                 wareNameField.setText(wareName);
                 wareNameField.setEditable(false);
                 wareAmountField.setText(Double.toString(wareAmount));
-                warePrizeField.setText(Double.toString(warePrize));
+                warePriceField.setText(Double.toString(warePrize));
                 break;
         }
         newOfferDialog.setVisible(true);
@@ -377,7 +375,7 @@ public class OfferManagementWindow extends AppPageView {
         newOfferDialog.setVisible(false);
         wareNameField.setText("");
         wareAmountField.setText("");
-        warePrizeField.setText("");
+        warePriceField.setText("");
         this.setEnabled(true);
     }
 }

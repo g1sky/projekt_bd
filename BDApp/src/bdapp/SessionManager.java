@@ -10,9 +10,8 @@ import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
-// tutaj lądują konkretne funkcje odpytujące bazę (chociaż nie wiem czy ta nazwa dobrze oddaje zadanie tej klasy)
-// tutaj pewnie wyląduje też aktualny koszyk...
 public class SessionManager {
 
     private final BDApp parent;
@@ -20,18 +19,15 @@ public class SessionManager {
 
     private HashMap<String, Integer> categoryIDs;
 
-    //private Cart cart;
     public SessionManager(BDApp parent, String username) {
         this.parent = parent;
         this.username = username;
 
         try {
-            categoryIDs = getCategoriesMap(); // nie wiem jak często to powinno być odświeżane
+            categoryIDs = getCategoriesMap();
         } catch (SQLException ex) {
             Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        //this.cart = new Cart();
     }
 
     private Connection getConnection() {
@@ -42,11 +38,6 @@ public class SessionManager {
         return this.username;
     }
 
-    /*
-    public Cart getCart() {
-        return cart;
-    }
-     */
     public HashMap<String, Integer> getCategories() {
         return categoryIDs;
     }
@@ -158,7 +149,7 @@ public class SessionManager {
         }
         return model;
     }
-    
+
     public boolean addOffer(int wareId, double wareAmount, double warePrize) {
         PreparedStatement stmt = null;
         try {
@@ -321,7 +312,6 @@ public class SessionManager {
     }
 
     public boolean addToCart(Offer offer) {
-        // no i tutaj dzieje się magia...
         String call
                 = "BEGIN"
                 + " ? := CASE WHEN (g1_sgorski.add_to_cart(?, ?, ?)) "
@@ -434,6 +424,97 @@ public class SessionManager {
             Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+    }
+
+    public TableModel getToConfirmTransactions() throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement("SELECT tr.id, tr.kupiec, tr.sprzedawca, tr.stan, tr.data "
+                    + "FROM g1_sgorski.transakcja tr "
+                    + "WHERE (tr.sprzedawca = ? AND tr.stan = 1) OR (tr.kupiec = ? AND tr.stan = 2)");
+            stmt.setString(1, getUsername());
+            stmt.setString(2, getUsername());
+
+            rs = stmt.executeQuery();
+            model = BDApp.dataModelFromResultSet(rs, new int[]{0, 1, 2, 3}); // static - jakoś to nie pasuje
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
+    }
+
+    public TableModel getWaitingForConfirmationTransactions() throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement("SELECT tr.id, tr.kupiec, tr.sprzedawca, tr.stan, tr.data "
+                    + "FROM g1_sgorski.transakcja tr "
+                    + "WHERE (tr.sprzedawca = ? AND tr.stan = 2) OR (tr.kupiec = ? AND tr.stan = 1)");
+            stmt.setString(1, getUsername());
+            stmt.setString(2, getUsername());
+
+            rs = stmt.executeQuery();
+            model = BDApp.dataModelFromResultSet(rs, new int[]{0, 1, 2, 3}); // static - jakoś to nie pasuje
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
+    }
+
+    public boolean confirmTransaction(int trID) {
+                String call = "BEGIN"
+                + " ? := CASE WHEN (g1_sgorski.confirm_transaction(?)) "
+                + "       THEN 1 "
+                + "       ELSE 0"
+                + "      END;"
+                + "END;";
+        CallableStatement cstmt = null;
+        try {
+            cstmt = getConnection().prepareCall(call);
+            cstmt.setQueryTimeout(1800);
+            cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+            cstmt.setInt(2, trID);
+
+            cstmt.execute();
+            return cstmt.getInt(1) == 1;
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+    public TableModel getHistory() throws SQLException {
+                PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement("SELECT tr.id, tr.kupiec, tr.sprzedawca, tr.stan, tr.data "
+                    + "FROM g1_sgorski.transakcja tr "
+                    + "WHERE (tr.sprzedawca = ? OR tr.kupiec = ?) AND tr.stan = 3");
+            stmt.setString(1, getUsername());
+            stmt.setString(2, getUsername());
+
+            rs = stmt.executeQuery();
+            model = BDApp.dataModelFromResultSet(rs, new int[]{0, 1, 2, 3}); // static - jakoś to nie pasuje
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
     }
 
 }

@@ -7,7 +7,9 @@ import bdapp.view.SignInWindow;
 import bdapp.view.NavigateWindow;
 import bdapp.view.AppPageView;
 import bdapp.view.CartWindow;
+import bdapp.view.HistoryView;
 import bdapp.view.OfferManagementWindow;
+import bdapp.view.TransactionsView;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -53,6 +55,8 @@ public class AppWindow extends JFrame {
         viewMap.put(OfferManagementWindow.class, new OfferManagementWindow(this));
         viewMap.put(AllOffersWindow.class, new AllOffersWindow(this));
         viewMap.put(CartWindow.class, new CartWindow(this));
+        viewMap.put(TransactionsView.class, new TransactionsView(this));
+        viewMap.put(HistoryView.class, new HistoryView(this));
         pageView = new SignInWindow(this);
         add(pageView);
 

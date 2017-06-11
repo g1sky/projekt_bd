@@ -4,6 +4,7 @@ import bdapp.AppWindow;
 import bdapp.SessionManager;
 import bdapp.entities.Offer;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -195,13 +196,14 @@ public class AddToCartDialog extends javax.swing.JDialog {
         }
     }
 
-    private void hideIt() { // bo dla "hide" krzyczy że źle
+    private void hideIt() {
         offer = null;
         setVisible(false);
     }
 
     private void countCost() {
         double totalCost = Double.parseDouble(wareAmountField.getText()) * Double.parseDouble(wareCostField.getText());
-        totalCostField.setText(String.valueOf(totalCost));
+        DecimalFormat df = new DecimalFormat("#,###,###,##0.000"); 
+        totalCostField.setText(df.format(totalCost));
     }
 }
