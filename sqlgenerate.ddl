@@ -21,8 +21,8 @@ ALTER TABLE Kategoria ADD CONSTRAINT nazwa_kat_un UNIQUE ( nazwa ) ;
 
 CREATE TABLE Oferta
   (
-    cena_jednostkowa NUMBER (15,3) ,
-    ilosc            NUMBER (12,2) ,
+    cena_jednostkowa NUMBER (15,3) NOT NULL ,
+    ilosc            NUMBER (12,2) NOT NULL ,
     id_towaru        NUMBER NOT NULL
   ) ;
 CREATE UNIQUE INDEX oferta_idx ON Oferta
@@ -59,8 +59,8 @@ CREATE TABLE Towar_w_transakcji
   (
     id_transakcji    NUMBER NOT NULL ,
     id_towaru        NUMBER NOT NULL ,
-    ilosc            NUMBER (12,2) ,
-    cena_jednostkowa NUMBER (15,3)
+    ilosc            NUMBER (12,2) NOT NULL ,
+    cena_jednostkowa NUMBER (15,3) NOT NULL
   ) ;
 CREATE INDEX twt_id_idx ON Towar_w_transakcji
   ( id_transakcji ASC
@@ -136,6 +136,89 @@ CREATE OR REPLACE TRIGGER Transakcja_id_TRG BEFORE
   INSERT ON Transakcja FOR EACH ROW WHEN (NEW.id IS NULL) BEGIN :NEW.id := Transakcja_id_SEQ.NEXTVAL;
 END;
 /
+
+create or replace TRIGGER Oferta_ilosc_trg
+BEFORE INSERT ON Oferta FOR EACH ROW
+DECLARE
+  t_ilosc towar.ilosc%TYPE;
+BEGIN
+SELECT ilosc INTO t_ilosc FROM towar WHERE id = :NEW.id_towaru;
+IF :new.ilosc > t_ilosc OR :new.ilosc < 0 then
+  RAISE VALUE_ERROR;
+END IF;
+END;
+/
+
+create or replace TRIGGER transakcja_ilosc_trg
+BEFORE INSERT ON towar_w_transakcji FOR EACH ROW
+DECLARE
+  o_ilosc oferta.ilosc%TYPE;
+BEGIN
+SELECT ilosc INTO o_ilosc FROM oferta WHERE id_towaru = :NEW.id_towaru;
+IF :new.ilosc > o_ilosc OR :new.ilosc < 0 then
+  RAISE VALUE_ERROR;
+END IF;
+END;
+/
+
+
+create or replace FUNCTION add_to_cart
+   (id_towaru_ IN INTEGER,
+   ilosc_ IN NUMBER,
+   kupiec_ IN VARCHAR)
+RETURN BOOLEAN
+
+AS
+
+id_transakcji_ INTEGER;
+sprzedawca_ VARCHAR(40);
+cena_jednostkowa_ NUMBER;
+
+BEGIN
+
+    SELECT t.wlasciciel INTO sprzedawca_ -- poszukiwanie wlasciciela
+      FROM g1_sgorski.towar t
+      WHERE t.id = id_towaru_;
+      
+    SELECT o.cena_jednostkowa into cena_jednostkowa_ -- poszukiwanie ceny
+      FROM g1_sgorski.oferta o
+      WHERE o.id_towaru = id_towaru_;
+      
+    BEGIN -- poszukiwanie koszyka
+      SELECT t.id into id_transakcji_
+        FROM g1_sgorski.transakcja t
+        WHERE t.sprzedawca = sprzedawca_ AND t.kupiec = kupiec_ AND t.stan = 0;
+        
+    EXCEPTION
+      WHEN NO_DATA_FOUND THEN -- nie znalazl, wiec trzeba go dodac
+        INSERT INTO g1_sgorski.transakcja (sprzedawca, kupiec, stan)
+          VALUES (sprzedawca_, kupiec_, 0);
+        SELECT t.id into id_transakcji_ -- i jeszcze raz szukamy
+          FROM g1_sgorski.transakcja t
+          WHERE t.sprzedawca = sprzedawca_ AND t.kupiec = kupiec_ AND t.stan = 0;
+          
+    END;
+    
+    BEGIN -- teraz dodawanie/aktualizacja towaru
+      INSERT INTO g1_sgorski.towar_w_transakcji (id_transakcji, id_towaru, ilosc, cena_jednostkowa)
+          VALUES (id_transakcji_, id_towaru_, ilosc_, cena_jednostkowa_);
+          
+    EXCEPTION
+      WHEN DUP_VAL_ON_INDEX THEN -- jesli juz istnieje to tylko update
+        UPDATE g1_sgorski.towar_w_transakcji
+        SET ilosc = ilosc_, cena_jednostkowa = cena_jednostkowa_
+        WHERE id_transakcji = id_transakcji_ AND id_towaru = id_towaru_;
+        
+    END;
+    
+RETURN TRUE;
+
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN-- nie ma uzytkownika, ktory posiada towar o takim id lub nie ma takiego towaru, wiec trudno
+    RETURN FALSE;
+    
+END add_to_cart;
+
 
 
 -- Oracle SQL Developer Data Modeler Summary Report: 

@@ -40,7 +40,6 @@
 <createdTime>2017-05-31 16:04:06 UTC</createdTime>
 <generatorID>54559E3B-1877-9F7F-D06A-BC3848DDCE84</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -55,7 +54,6 @@
 <createdTime>2017-05-31 16:04:06 UTC</createdTime>
 <generatorID>0225FAB2-C998-66C0-34D7-43983A5A872F</generatorID>
 <ownerDesignName>gielda</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT043</logicalDatatype>

@@ -93,6 +93,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>0</dataTypePrecision>
 <dataTypeScale>12</dataTypeScale>
+<defaultValue>null</defaultValue>
 <ownDataTypeParameters>,0,12</ownDataTypeParameters>
 </Attribute>
 </attributes>

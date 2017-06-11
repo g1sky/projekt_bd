@@ -77,6 +77,8 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>0</dataTypePrecision>
 <dataTypeScale>12</dataTypeScale>
+<usesDefaultValue>true</usesDefaultValue>
+<defaultValue>null</defaultValue>
 <ownDataTypeParameters>,0,12</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>

@@ -135,6 +135,87 @@ public class SessionManager {
         return model;
     }
 
+    public DefaultTableModel getUserWaresWithoutOffer() throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "SELECT t.id, t.nazwa AS nazwa, t.ilosc AS ilość, k.nazwa AS kategoria"
+                    + " FROM g1_sgorski.towar t JOIN g1_sgorski.kategoria k ON (t.id_kategorii=k.id)"
+                    + " WHERE wlasciciel = ?"
+                    + " AND t.id NOT IN(SELECT o.id_towaru FROM oferta o)"
+            );
+            stmt.setString(1, getUsername());
+            rs = stmt.executeQuery();
+            model = BDApp.dataModelFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
+    }
+    
+    public boolean addOffer(int wareId, double wareAmount, double warePrize) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "INSERT INTO g1_sgorski.oferta "
+                    + "(cena_jednostkowa, ilosc, id_towaru) "
+                    + "VALUES (?, ?, ?)"
+            );
+            stmt.setDouble(1, warePrize);
+            stmt.setDouble(2, wareAmount);
+            stmt.setInt(3, wareId);
+
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(BDApp.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
+
+    public boolean updateOffer(int wareId, double wareAmount, double warePrize) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "UPDATE g1_sgorski.oferta "
+                    + "SET cena_jednostkowa = ?, ilosc = ? "
+                    + "WHERE id_towaru = ?"
+            );
+            stmt.setDouble(1, warePrize);
+            stmt.setDouble(2, wareAmount);
+            stmt.setInt(3, wareId);
+
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(BDApp.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
+
+    public boolean removeOffer(int wareId) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "DELETE FROM g1_sgorski.oferta "
+                    + "WHERE id_towaru = ?"
+            );
+            stmt.setInt(1, wareId);
+
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(BDApp.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
+
     public DefaultTableModel getUserOffers() throws SQLException {
         PreparedStatement stmt = null;
         ResultSet rs = null;
