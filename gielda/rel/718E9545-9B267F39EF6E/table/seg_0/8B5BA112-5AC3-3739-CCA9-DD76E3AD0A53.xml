@@ -67,6 +67,17 @@
 <autoIncrementCycle>false</autoIncrementCycle>
 <isSurrogateColumn>true</isSurrogateColumn>
 </Column>
+<Column name="data" id="619F582D-4BDB-1964-33AC-B2704EF9E39F">
+<createdBy>sgorski</createdBy>
+<createdTime>2017-06-11 22:57:20 UTC</createdTime>
+<ownerDesignName>gielda</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="C94294ED-9BBE-DF2D-B629-BE2E6F732C95" name="transakcja_pk">
