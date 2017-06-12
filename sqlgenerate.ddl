@@ -73,7 +73,8 @@ CREATE TABLE Transakcja
     kupiec     VARCHAR2 (40) ,
     sprzedawca VARCHAR2 (40) ,
     stan       NUMBER (1) NOT NULL ,
-    id         NUMBER NOT NULL
+    id         NUMBER NOT NULL ,
+    data       DATE
   ) ;
 CREATE INDEX tr_kupiec_idx ON Transakcja
   ( kupiec ASC

@@ -7,19 +7,19 @@
 
 ## Z USOS'a:
 ### Na ocenę 3:
-- Mało skomplikowany diagram logiczny (min. 4 encje, jedna zależność wiele do wielu, poprawnie wypełnione zakładki "ogólne", atrybuty, poprawne kierunki relacji)
-- Opanowana umiejętność przekształcania diagramu logicznego w relacyjny
-- prosty wyzwalacz (np. logujący wykonanie zmiany w jakiejś tabeli - kiedy, rodzaj zmiany, itp)
-- prościutka aplikacja bazodanowa zawierająca możliwość wprowadzania/przeglądania danych bezpośrednio do/z tabel z diagramu logicznego (pomijając tabele wygenerowane później) oraz jedno okno nawigacyjne umożliwiające otwieranie okien wprowadzania; aplikacja nie musi obsługiwać okien wprowadzania hasła - może mieć funkcję logowania "zaszytą" w kodzie
+- [x] Mało skomplikowany diagram logiczny (min. 4 encje, jedna zależność wiele do wielu, poprawnie wypełnione zakładki "ogólne", atrybuty, poprawne kierunki relacji)
+- [x] Opanowana umiejętność przekształcania diagramu logicznego w relacyjny
+- [x] prosty wyzwalacz (np. logujący wykonanie zmiany w jakiejś tabeli - kiedy, rodzaj zmiany, itp)
+- [x] prościutka aplikacja bazodanowa zawierająca możliwość wprowadzania/przeglądania danych bezpośrednio do/z tabel z diagramu logicznego (pomijając tabele wygenerowane później) oraz jedno okno nawigacyjne umożliwiające otwieranie okien wprowadzania; aplikacja nie musi obsługiwać okien wprowadzania hasła - może mieć funkcję logowania "zaszytą" w kodzie
 ### Na ocenę 4:
-- spełnienie kryteriów na 3 oraz:
-- w diagramie logicznym poprawnie nazwane (nazwy wyświetlone) relacje pomiędzy encjami, poprawnie ustawione ograniczenia), diagram relacyjny, który bez błędów generuje poprawny DDL
-- bardziej skomplikowany wyzwalacz, który ma przynajmniej dwie instrukcje warunkowe
-- prosty diagram przepływu jedynie z prostymi procesami
-- aplikacja, która ma min. 1 okno na którym w zależności od wybranej krotki z jednej tabeli wyświetli wszystkie powiązane
+- [x] spełnienie kryteriów na 3 oraz:
+- [x] w diagramie logicznym poprawnie nazwane (nazwy wyświetlone) relacje pomiędzy encjami, poprawnie ustawione ogrniczenia), diagram relacyjny, który bez błędów generuje poprawny DDL
+- [ ] bardziej skomplikowany wyzwalacz, który ma przynajmniej dwie instrukcje warunkowe
+- [x] prosty diagram przepływu jedynie z prostymi procesami
+- [x] aplikacja, która ma min. 1 okno na którym w zależności od wybranej krotki z jednej tabeli wyświetli wszystkie powiązane
 ### Na ocenę 5:
-- rozbudowany diagram przepływu z min. dwoma złożonymi "procesami"
-- każda z tabel ma wykorzystywać wbudowane sekwencje do autonumeracji identyfikatorów (jeżeli używają "sztucznego" id jako klucza głównego)
-- w kodzie jdbc użyte są nie tylko odwołania SQL do danych, ale także zarządzanie transakcjami
-- wykorzystanie w kodzie jdbc wbudowanej funkcji
-- aplikacja "ma ręce i nogi" - faktycznie spełnia diagramy przepływu, ma estetyczne GUI, reszta wedle wybranego projektu
+- [ ] rozbudowany diagram przepływu z min. dwoma złożonymi "procesami"
+- [ ] każda z tabel ma wykorzystywać wbudowane sekwencje do autonumeracji identyfikatorów (jeżeli używają "sztucznego" id jako klucza głównego)
+- [ ] w kodzie jdbc użyte są nie tylko odwołania SQL do danych, ale także zarządzanie transakcjami
+- [ ] wykorzystanie w kodzie jdbc wbudowanej funkcji
+- [ ] aplikacja "ma ręce i nogi" - faktycznie spełnia diagramy przepływu, ma estetyczne GUI, reszta wedle wybranego projektu
