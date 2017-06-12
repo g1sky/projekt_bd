@@ -280,6 +280,7 @@ public class CartWindow extends AppPageView {
     public void refresh() {
         try {
             cartTable.setModel(getSession().getCart());
+            cartTable.changeSelection(0, 0, false, false);
             countCost();
         } catch (SQLException ex) {
             Logger.getLogger(CartWindow.class.getName()).log(Level.SEVERE, null, ex);

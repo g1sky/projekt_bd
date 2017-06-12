@@ -1,6 +1,7 @@
 package bdapp;
 
 import bdapp.entities.Offer;
+import bdapp.entities.Transaction;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -115,7 +116,7 @@ public class SessionManager {
             );
             stmt.setString(1, getUsername());
             rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs);
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -139,7 +140,7 @@ public class SessionManager {
             );
             stmt.setString(1, getUsername());
             rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs);
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -219,7 +220,7 @@ public class SessionManager {
             );
             stmt.setString(1, getUsername());
             rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs, new int[]{0});
+            model = BDApp.dataModelFromResultSet(rs);
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -249,7 +250,7 @@ public class SessionManager {
                 );
             }
             rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs, new int[]{0}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs);
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -348,7 +349,7 @@ public class SessionManager {
             stmt.setString(1, getUsername());
 
             rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs, new int[]{0, 1, 2, 3}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs);
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -438,7 +439,8 @@ public class SessionManager {
             stmt.setString(2, getUsername());
 
             rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs, new int[]{0, 1, 2, 3}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs);
+            formatStateOnModel(model);
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -461,7 +463,8 @@ public class SessionManager {
             stmt.setString(2, getUsername());
 
             rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs, new int[]{0, 1, 2, 3}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs);
+            formatStateOnModel(model);
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -473,7 +476,7 @@ public class SessionManager {
     }
 
     public boolean confirmTransaction(int trID) {
-                String call = "BEGIN"
+        String call = "BEGIN"
                 + " ? := CASE WHEN (g1_sgorski.confirm_transaction(?)) "
                 + "       THEN 1 "
                 + "       ELSE 0"
@@ -495,7 +498,7 @@ public class SessionManager {
     }
 
     public TableModel getHistory() throws SQLException {
-                PreparedStatement stmt = null;
+        PreparedStatement stmt = null;
         ResultSet rs = null;
         DefaultTableModel model = null;
         try {
@@ -506,7 +509,8 @@ public class SessionManager {
             stmt.setString(2, getUsername());
 
             rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs, new int[]{0, 1, 2, 3}); // static - jakoś to nie pasuje
+            model = BDApp.dataModelFromResultSet(rs);
+            formatStateOnModel(model);
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
@@ -515,6 +519,82 @@ public class SessionManager {
             }
         }
         return model;
+    }
+
+    private void formatStateOnModel(TableModel model) {
+        int colID = -1;
+        for (int i = 0; i < model.getColumnCount(); i++) {
+            if (model.getColumnName(i).equals("STAN")) {
+                colID = i;
+                break;
+            }
+        }
+        if (colID != -1) {
+            for (int i = 0; i < model.getRowCount(); i++) {
+                int s = Integer.parseInt(model.getValueAt(i, colID).toString());
+                model.setValueAt(stateName(s), i, colID);
+            }
+        }
+    }
+
+    public static String stateName(int state) {
+        switch (state) {
+            case 0:
+                return "KOSZYK";
+            case 1:
+                return "DO ZAPŁATY";
+            case 2:
+                return "DO WYSYŁKI";
+            case 3:
+                return "ZAKOŃCZONA";
+        }
+        return "BŁĄD";
+    }
+
+    public TableModel getTransactionWares(int trID) throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement("SELECT t.nazwa, twt.ilosc, twt.cena_jednostkowa "
+                    + "FROM g1_sgorski.towar t JOIN g1_sgorski.towar_w_transakcji twt ON (t.id = twt.id_towaru) JOIN g1_sgorski.transakcja tr ON (tr.id = twt.id_transakcji) "
+                    + "WHERE tr.id = ?");
+            stmt.setInt(1, trID);
+            rs = stmt.executeQuery();
+            model = BDApp.dataModelFromResultSet(rs);
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
+    }
+
+    public Transaction getTransactionDetails(int trID) throws SQLException {
+        Transaction tr = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "SELECT tr.id, tr.kupiec, tr.sprzedawca, tr.data, tr.stan"
+                    + " FROM g1_sgorski.transakcja tr"
+                    + " WHERE tr.id = ?"
+            );
+            stmt.setInt(1, trID);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                tr = new Transaction(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), stateName(rs.getInt(5)));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return tr;
     }
 
 }

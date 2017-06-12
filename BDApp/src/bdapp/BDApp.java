@@ -14,7 +14,6 @@ import java.sql.Statement;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.IntStream;
 import javax.swing.table.DefaultTableModel;
 
 public class BDApp {
@@ -101,7 +100,7 @@ public class BDApp {
     }
 
     // przyjmuje jako dodatkowy parametr tablicę z numerami kolumn, które nie są edytowalne
-    public static DefaultTableModel dataModelFromResultSet(ResultSet rs, int[] nonEditable) throws SQLException {
+    public static DefaultTableModel dataModelFromResultSet(ResultSet rs) throws SQLException {
         ResultSetMetaData rsmd = rs.getMetaData();
         int colNum = rsmd.getColumnCount();
         Vector<String> columnNames = new Vector<>();
@@ -123,10 +122,9 @@ public class BDApp {
         DefaultTableModel model = new DefaultTableModel(rowData, columnNames) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                return !IntStream.of(nonEditable).anyMatch(x -> x == column);
+                return false;
             }
         };
-
         return model;
     }
 
