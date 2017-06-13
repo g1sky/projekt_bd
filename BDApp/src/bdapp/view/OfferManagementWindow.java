@@ -329,7 +329,7 @@ public class OfferManagementWindow extends AppPageView {
             wareTable.setModel(getSession().getUserWaresWithoutOffer());
             wareTable.getColumnModel().removeColumn(wareTable.getColumnModel().getColumn(0));
             wareTable.changeSelection(0, 0, false, false);
-            offerTable.setModel(getSession().getUserOffers());
+            offerTable.setModel(getSession().getCurrentUserOffers());
             offerTable.getColumnModel().removeColumn(offerTable.getColumnModel().getColumn(0));
             offerTable.changeSelection(0, 0, false, false);
         } catch (SQLException ex) {

@@ -10,6 +10,7 @@ import bdapp.view.CartWindow;
 import bdapp.view.HistoryView;
 import bdapp.view.OfferManagementWindow;
 import bdapp.view.TransactionsView;
+import bdapp.view.UserListWindow;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -57,6 +58,7 @@ public class AppWindow extends JFrame {
         viewMap.put(CartWindow.class, new CartWindow(this));
         viewMap.put(TransactionsView.class, new TransactionsView(this));
         viewMap.put(HistoryView.class, new HistoryView(this));
+        viewMap.put(UserListWindow.class, new UserListWindow(this));
         pageView = new SignInWindow(this);
         add(pageView);
 
@@ -80,13 +82,4 @@ public class AppWindow extends JFrame {
     public BDApp getApp() {
         return parent;
     }
-
-    // raczej niepotrzebne i nieopłacalne
-    /*
-    public void refreshAll() {
-        map.forEach((k, v) -> {
-            v.refresh();
-        });
-    }
-     */
 }

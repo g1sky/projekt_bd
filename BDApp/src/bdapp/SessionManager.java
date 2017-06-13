@@ -2,6 +2,7 @@ package bdapp;
 
 import bdapp.entities.Offer;
 import bdapp.entities.Transaction;
+import bdapp.entities.User;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -208,30 +209,11 @@ public class SessionManager {
         return true;
     }
 
-    public DefaultTableModel getUserOffers() throws SQLException {
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        DefaultTableModel model = null;
-        try {
-            stmt = getConnection().prepareStatement(
-                    "SELECT t.id, t.nazwa AS NAZWA_TOWARU, o.ilosc AS ILOŚĆ, o.cena_jednostkowa AS CENA_JEDNOSTKOWA, k.nazwa AS kategoria"
-                    + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id) JOIN g1_sgorski.kategoria k ON (t.id_kategorii=k.id)"
-                    + " WHERE t.wlasciciel = ?"
-            );
-            stmt.setString(1, getUsername());
-            rs = stmt.executeQuery();
-            model = BDApp.dataModelFromResultSet(rs);
-        } catch (SQLException e) {
-            System.out.println(e);
-        } finally {
-            if (stmt != null) {
-                stmt.close();
-            }
-        }
-        return model;
+    public TableModel getCurrentUserOffers() throws SQLException {
+        return getUserOffers(getUsername());
     }
 
-    public DefaultTableModel getAllOffers(boolean hideMyOffers) throws SQLException {
+    public TableModel getAllOffers(boolean hideMyOffers) throws SQLException {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         DefaultTableModel model = null;
@@ -595,6 +577,72 @@ public class SessionManager {
             }
         }
         return tr;
+    }
+
+    public TableModel getUsers() throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement("SELECT u.nickname, u.imie, u.nazwisko, u.nr_telefonu, u.email FROM uzytkownik u");
+            rs = stmt.executeQuery();
+            model = BDApp.dataModelFromResultSet(rs);
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
+    }
+
+    public User getUserDetails(String nickname) throws SQLException {
+        User user = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "SELECT u.nickname, u.imie, u.nazwisko, u.nr_telefonu, u.email "
+                    + "FROM uzytkownik u "
+                    + "WHERE u.nickname = ?"
+            );
+            stmt.setString(1, nickname);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                user = new User(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return user;
+    }
+
+    public TableModel getUserOffers(String nickname) throws SQLException {
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        DefaultTableModel model = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "SELECT t.id, t.nazwa AS NAZWA_TOWARU, o.ilosc AS ILOŚĆ, o.cena_jednostkowa AS CENA_JEDNOSTKOWA, k.nazwa AS kategoria"
+                    + " FROM g1_sgorski.oferta o JOIN g1_sgorski.towar t ON (o.id_towaru=t.id) JOIN g1_sgorski.kategoria k ON (t.id_kategorii=k.id)"
+                    + " WHERE t.wlasciciel = ?"
+            );
+            stmt.setString(1, nickname);
+            rs = stmt.executeQuery();
+            model = BDApp.dataModelFromResultSet(rs);
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        return model;
     }
 
 }

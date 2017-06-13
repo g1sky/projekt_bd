@@ -35,7 +35,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
                       <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="110" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
@@ -56,9 +56,9 @@
                                   <Component id="phoneTextField" alignment="0" max="32767" attributes="0"/>
                                   <Component id="passwordField" alignment="0" max="32767" attributes="0"/>
                                   <Component id="repeatPasswordField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="nameTextField" min="-2" pref="250" max="-2" attributes="0"/>
                                   <Component id="surnameTextField" alignment="0" max="32767" attributes="0"/>
                                   <Component id="loginTextField" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="nameTextField" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="errorLabel" max="32767" attributes="0"/>
