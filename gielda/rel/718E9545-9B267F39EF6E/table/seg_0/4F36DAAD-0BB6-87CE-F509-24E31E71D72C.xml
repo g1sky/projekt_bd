@@ -56,7 +56,7 @@
 <ownDataTypeParameters>170,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="e-mail" id="953E785F-811A-4C74-7CE6-9D1FB860AE3E">
+<Column name="email" id="953E785F-811A-4C74-7CE6-9D1FB860AE3E">
 <createdBy>sgorski</createdBy>
 <createdTime>2017-06-02 06:58:18 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>

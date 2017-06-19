@@ -14,12 +14,12 @@
 ### Na ocenę 4:
 - [x] spełnienie kryteriów na 3 oraz:
 - [x] w diagramie logicznym poprawnie nazwane (nazwy wyświetlone) relacje pomiędzy encjami, poprawnie ustawione ogrniczenia), diagram relacyjny, który bez błędów generuje poprawny DDL
-- [ ] bardziej skomplikowany wyzwalacz, który ma przynajmniej dwie instrukcje warunkowe
+- [x] bardziej skomplikowany wyzwalacz, który ma przynajmniej dwie instrukcje warunkowe
 - [x] prosty diagram przepływu jedynie z prostymi procesami
 - [x] aplikacja, która ma min. 1 okno na którym w zależności od wybranej krotki z jednej tabeli wyświetli wszystkie powiązane
 ### Na ocenę 5:
-- [ ] rozbudowany diagram przepływu z min. dwoma złożonymi "procesami"
-- [ ] każda z tabel ma wykorzystywać wbudowane sekwencje do autonumeracji identyfikatorów (jeżeli używają "sztucznego" id jako klucza głównego)
-- [ ] w kodzie jdbc użyte są nie tylko odwołania SQL do danych, ale także zarządzanie transakcjami
-- [ ] wykorzystanie w kodzie jdbc wbudowanej funkcji
-- [ ] aplikacja "ma ręce i nogi" - faktycznie spełnia diagramy przepływu, ma estetyczne GUI, reszta wedle wybranego projektu
+- [x] rozbudowany diagram przepływu z min. dwoma złożonymi "procesami"
+- [x] każda z tabel ma wykorzystywać wbudowane sekwencje do autonumeracji identyfikatorów (jeżeli używają "sztucznego" id jako klucza głównego)
+- [x] w kodzie jdbc użyte są nie tylko odwołania SQL do danych, ale także zarządzanie transakcjami
+- [x] wykorzystanie w kodzie jdbc wbudowanej funkcji
+- [x] aplikacja "ma ręce i nogi" - faktycznie spełnia diagramy przepływu, ma estetyczne GUI, reszta wedle wybranego projektu

@@ -25,27 +25,27 @@
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="historyButton" min="-2" pref="163" max="-2" attributes="0"/>
+                      <Component id="historyButton" min="-2" pref="172" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="findOfferButton" min="-2" pref="163" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="cartButton" min="-2" pref="75" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="logedAsLabel" pref="526" max="32767" attributes="0"/>
+                              <Component id="logedAsLabel" pref="514" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="signOutButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="usersButton" min="-2" pref="163" max="-2" attributes="0"/>
-                                  <Component id="ownedWareButton" min="-2" pref="163" max="-2" attributes="0"/>
-                                  <Component id="myOfferButton" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                                  <Component id="transactionsButton" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="findOfferButton" min="-2" pref="163" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="cartButton" min="-2" pref="87" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="usersButton" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                                  <Component id="transactionsButton" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="myOfferButton" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ownedWareButton" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>

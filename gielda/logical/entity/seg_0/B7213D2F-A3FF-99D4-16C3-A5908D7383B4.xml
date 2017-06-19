@@ -67,7 +67,7 @@
 <dataTypeSize>170</dataTypeSize>
 <ownDataTypeParameters>170,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="e-mail" id="A3289DE4-C85D-19E6-7D13-B74AB03E771C">
+<Attribute name="email" id="A3289DE4-C85D-19E6-7D13-B74AB03E771C">
 <createdBy>sgorski</createdBy>
 <createdTime>2017-06-02 07:01:42 UTC</createdTime>
 <ownerDesignName>gielda</ownerDesignName>

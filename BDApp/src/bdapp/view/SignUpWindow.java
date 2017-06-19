@@ -208,7 +208,7 @@ public class SignUpWindow extends AppPageView {
                 errorLabel.setText("Ta nazwa użytkownika jest już zajęta. Wybierz inną.");
             } else if (emailTextField.getText().isEmpty()) {
                 errorLabel.setText("Pole Adres e-mail jest wymagane");
-            } else if (!emailTextField.getText().matches("^[0-9a-zA-Z.-]+@[a-zA-z.-]+\\.[A-Za-z]+$")) {
+            } else if (!emailTextField.getText().matches("^[0-9a-zA-Z.-]+@[a-zA-Z.-]+\\.[A-Za-z]+$")) {
                 errorLabel.setText("Niepoprawny Adres e-mail");
             } else if (!phoneTextField.getText().isEmpty() && !phoneTextField.getText().matches("^[0-9]+$")) {
                 errorLabel.setText("Pole Numer telefonu musi składać się wyłącznie z cyfr");
