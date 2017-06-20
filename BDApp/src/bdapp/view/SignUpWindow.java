@@ -249,17 +249,26 @@ public class SignUpWindow extends AppPageView {
     private void createAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccountButtonActionPerformed
         if (isCorrect()) {
             try {
+                /*try {
                 getApp().executeQuery(MessageFormat.format("INSERT INTO uzytkownik VALUES(''{0}'', ''{1}'', ''{2}'', ''{3}'', ''{4}'', {5})",
-                        nameTextField.getText(),
-                        surnameTextField.getText(),
-                        loginTextField.getText(),
-                        HashPassword.generateStorngPasswordHash(passwordField.getPassword()),
-                        emailTextField.getText(),
-                        phoneTextField.getText().isEmpty() ? null : phoneTextField.getText()
+                nameTextField.getText(),
+                surnameTextField.getText(),
+                loginTextField.getText(),
+                HashPassword.generateStorngPasswordHash(passwordField.getPassword()),
+                emailTextField.getText(),
+                phoneTextField.getText().isEmpty() ? null : phoneTextField.getText()
                 ));
                 registerInfoLabel.setText("Konto zostało utworzone");
                 createAccountButton.setEnabled(false);
-            } catch (NoSuchAlgorithmException | InvalidKeySpecException | SQLException ex) {
+                } catch (NoSuchAlgorithmException | InvalidKeySpecException | SQLException ex) {
+                Logger.getLogger(SignUpWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }*/
+                if(getApp().signUp(nameTextField.getText(), surnameTextField.getText(), loginTextField.getText(), HashPassword.generateStorngPasswordHash(passwordField.getPassword()),
+                        emailTextField.getText(), phoneTextField.getText().isEmpty() ? null : phoneTextField.getText())){
+                    registerInfoLabel.setText("Konto zostało utworzone");
+                    createAccountButton.setEnabled(false);
+                }
+            } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
                 Logger.getLogger(SignUpWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

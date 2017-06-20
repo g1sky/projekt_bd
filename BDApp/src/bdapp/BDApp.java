@@ -129,6 +129,29 @@ public class BDApp {
     }
 
     //--------------------------------------------------------------------------
+    public boolean signUp(String name, String surname, String nickname, String password, String email, String number){
+        PreparedStatement stmt = null;
+        try {
+            stmt = getConnection().prepareStatement(
+                    "INSERT INTO g1_sgorski.uzytkownik "
+                    + "(imie, nazwisko, nickname, haslo, email, nr_telefonu) "
+                    + "VALUES (?, ?, ?, ?, ?, ?)"
+            );
+            stmt.setString(1, name);
+            stmt.setString(2, surname);
+            stmt.setString(3, nickname);
+            stmt.setString(4, password);
+            stmt.setString(5, email);
+            stmt.setString(6, number);
+
+            stmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(BDApp.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+        return true;
+    }
+    
     public boolean signInAs(String login, char[] password) {
         try {
             if (!login.isEmpty()
