@@ -192,38 +192,23 @@ public class SignUpWindow extends AppPageView {
     }// </editor-fold>//GEN-END:initComponents
 
     private boolean isCorrect() {
-        try {
-            // to by trzeba jakoś uprościć
-            if (nameTextField.getText().isEmpty()) {
-                errorLabel.setText("Pole Imię jest wymagane");
-            } else if (!nameTextField.getText().matches("^[a-zA-Z]+$")) {
-                errorLabel.setText("Pole Imię musi składać się wyłącznie z liter");
-            } else if (surnameTextField.getText().isEmpty()) {
-                errorLabel.setText("Pole Nazwisko jest wymagane");
-            } else if (!surnameTextField.getText().matches("^[a-zA-Z]+$")) {
-                errorLabel.setText("Pole Nazwisko musi składać się wyłącznie z liter");
-            } else if (loginTextField.getText().isEmpty()) {
-                errorLabel.setText("Pole Nazwa użytkownika jest wymagane");
-            } else if (getApp().userExists(loginTextField.getText())) {
-                errorLabel.setText("Ta nazwa użytkownika jest już zajęta. Wybierz inną.");
-            } else if (emailTextField.getText().isEmpty()) {
-                errorLabel.setText("Pole Adres e-mail jest wymagane");
-            } else if (!emailTextField.getText().matches("^[0-9a-zA-Z.-]+@[a-zA-Z.-]+\\.[A-Za-z]+$")) {
-                errorLabel.setText("Niepoprawny Adres e-mail");
-            } else if (!phoneTextField.getText().isEmpty() && !phoneTextField.getText().matches("^[0-9]+$")) {
-                errorLabel.setText("Pole Numer telefonu musi składać się wyłącznie z cyfr");
-            } else if (passwordField.getPassword().length == 0) {
-                errorLabel.setText("Pole Hasło jest wymagane");
-            } else if (repeatPasswordField.getPassword().length == 0) {
-                errorLabel.setText("Pole Powtórz hasło jest wymagane");
-            } else if (!Arrays.equals(repeatPasswordField.getPassword(), passwordField.getPassword())) {
-                errorLabel.setText("Hasła nie są zgodne ");
-            } else {
-                errorLabel.setText("");
-                return true;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(SignUpWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if (nameTextField.getText().isEmpty()) {
+            errorLabel.setText("Pole Imię jest wymagane");
+        } else if (surnameTextField.getText().isEmpty()) {
+            errorLabel.setText("Pole Nazwisko jest wymagane");
+        } else if (loginTextField.getText().isEmpty()) {
+            errorLabel.setText("Pole Nazwa użytkownika jest wymagane");
+        } else if (emailTextField.getText().isEmpty()) {
+            errorLabel.setText("Pole Adres e-mail jest wymagane");
+        }  else if (passwordField.getPassword().length == 0) {
+            errorLabel.setText("Pole Hasło jest wymagane");
+        } else if (repeatPasswordField.getPassword().length == 0) {
+            errorLabel.setText("Pole Powtórz hasło jest wymagane");
+        } else if (!Arrays.equals(repeatPasswordField.getPassword(), passwordField.getPassword())) {
+            errorLabel.setText("Hasła nie są zgodne ");
+        } else {
+            errorLabel.setText("");
+            return true;
         }
         return false;
     }
@@ -263,13 +248,35 @@ public class SignUpWindow extends AppPageView {
                 } catch (NoSuchAlgorithmException | InvalidKeySpecException | SQLException ex) {
                 Logger.getLogger(SignUpWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }*/
-                if(getApp().signUp(nameTextField.getText(), surnameTextField.getText(), loginTextField.getText(), HashPassword.generateStorngPasswordHash(passwordField.getPassword()),
-                        emailTextField.getText(), phoneTextField.getText().isEmpty() ? null : phoneTextField.getText())){
+                if (getApp().signUp(nameTextField.getText(), surnameTextField.getText(), loginTextField.getText(), HashPassword.generateStorngPasswordHash(passwordField.getPassword()),
+                        emailTextField.getText(), phoneTextField.getText().isEmpty() ? null : phoneTextField.getText())) {
                     registerInfoLabel.setText("Konto zostało utworzone");
                     createAccountButton.setEnabled(false);
                 }
             } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
                 Logger.getLogger(SignUpWindow.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(SignUpWindow.class.getName()).log(Level.SEVERE, null, ex);
+                switch (ex.getErrorCode()) {
+                    case 20002:
+                        errorLabel.setText("Błąd w polu Imię");
+                        break;
+                    case 20003:
+                        errorLabel.setText("Błąd w polu Nazwisko");
+                        break;
+                    case 20001:
+                        errorLabel.setText("Użytkownik o podanej nazwie już istnieje");
+                        break;
+                    case 20004:
+                        errorLabel.setText("Błędny format adresu email");
+                        break;
+                    case 20005:
+                        errorLabel.setText("Błąd w polu Numer telefonu");
+                        break;
+                    default:
+                        errorLabel.setText("");
+                        break;
+                }
             }
         }
     }//GEN-LAST:event_createAccountButtonActionPerformed
